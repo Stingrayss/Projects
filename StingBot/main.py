@@ -1,4 +1,3 @@
-from ast import alias
 import discord
 from discord.ext import commands
 import json
@@ -19,9 +18,14 @@ class Greetings(commands.Cog):
 
 # Intents
 intents = discord.Intents.default()
+
 # The bot
 bot = commands.Bot(prefix, intents = intents)
 bot.remove_command("help")
+
+# intents
+bot.intents.members = True
+intents.members = True
 
 # Load cogs
 if __name__ == '__main__':

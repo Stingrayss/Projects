@@ -1,7 +1,10 @@
-from email import message
 import discord
+import json
+from datetime import datetime, timedelta
 import random
 from discord.ext import commands, tasks
+from discord.ext.commands.bot import Bot
+
 
 #initalize the cog
 class Commands(commands.Cog):
@@ -10,6 +13,18 @@ class Commands(commands.Cog):
         self.bot = bot
 
     #commands
+    @commands.command()
+    async def users(self, ctx):
+        client = discord.client
+        for guild in client.guilds:
+            for member in guild.members:
+                print(member) # or do whatever you wish with the member detail
+
+        #data['users'] = [f"name: {member.id}", "time: ", f"server: {discord.Guild}"]
+        #json_data = json.dumps(data)
+        #print(f'{json_data}')
+
+
     @commands.command()
     async def predict(self, ctx, *, question):
         responses = ["It is certain.",
