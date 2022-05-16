@@ -1,0 +1,4 @@
+﻿  game.cpp
+D:\Users\Stingray\Documents\Computer Science\AppleCatch\AppleCatch\AppleCatch\game.cpp(4,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Users\Stingray\Documents\Computer Science\AppleCatch\AppleCatch\AppleCatch\game.cpp(63,16): warning C4305: '=': truncation from 'double' to 'float'
+  AppleCatch.vcxproj -> D:\Users\Stingray\Documents\Computer Science\AppleCatch\AppleCatch\x64\Debug\AppleCatch.exe

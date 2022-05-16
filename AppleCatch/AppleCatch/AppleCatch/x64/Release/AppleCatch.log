@@ -1,0 +1,21 @@
+﻿  game.cpp
+D:\Users\Stingray\Documents\Computer Science\AppleCatch\AppleCatch\AppleCatch\game.cpp(4,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Users\Stingray\Documents\Computer Science\AppleCatch\AppleCatch\AppleCatch\game.cpp(63,16): warning C4305: '=': truncation from 'double' to 'float'
+  main.cpp
+D:\Users\Stingray\Documents\Computer Science\AppleCatch\AppleCatch\AppleCatch\main.cpp(10,52): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\Users\Stingray\Documents\Computer Science\AppleCatch\AppleCatch\AppleCatch\main.cpp(10,34): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\Users\Stingray\Documents\Computer Science\AppleCatch\AppleCatch\AppleCatch\main.cpp(163,34): warning C4305: '+=': truncation from 'double' to 'float'
+  Generating code
+  2 of 220 functions ( 0.9%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  AppleCatch.vcxproj -> D:\Users\Stingray\Documents\Computer Science\AppleCatch\AppleCatch\x64\Release\AppleCatch.exe
