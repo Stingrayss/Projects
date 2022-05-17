@@ -2,7 +2,8 @@
     "users": [
         {
         "name": "",
-        "time": "",
+        "last_joined": "",
+        "time_spent": "",
         "server": ""
         }
     ]

@@ -1,10 +1,8 @@
 import discord
+from discord import Spotify
 import json
-from datetime import datetime, timedelta
 import random
-from discord.ext import commands, tasks
-from discord.ext.commands.bot import Bot
-
+from discord.ext import commands
 
 #initalize the cog
 class Commands(commands.Cog):
@@ -15,10 +13,10 @@ class Commands(commands.Cog):
     #commands
     @commands.command()
     async def users(self, ctx):
-        client = discord.client
-        for guild in client.guilds:
+        #client = discord.client
+        for guild in self.bot.guilds:
             for member in guild.members:
-                print(member) # or do whatever you wish with the member detail
+                print(f'{member.name}, server: {guild}')
 
         #data['users'] = [f"name: {member.id}", "time: ", f"server: {discord.Guild}"]
         #json_data = json.dumps(data)
@@ -58,6 +56,7 @@ class Commands(commands.Cog):
     @commands.command()
     async def roll(self, ctx):
         await ctx.send(random.randint(1, 100))
+
 
 def setup(bot):
     bot.add_cog(Commands(bot))
