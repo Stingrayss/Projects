@@ -2,6 +2,7 @@ import discord
 import json
 from datetime import datetime, timedelta
 from discord.ext import commands, tasks
+import random
 
 class listeners(commands.Cog):
 
@@ -28,7 +29,9 @@ class listeners(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message:discord.Message):
-        print(message.author.name)
+        #print(message.author.name)
+        if(random.randint(1, 25) == 7 and message.author.id != 543329883732836359):
+            await message.channel.send("🐠Just Keep Swimming🐠")
 
 def setup(bot):
     bot.add_cog(listeners(bot))
