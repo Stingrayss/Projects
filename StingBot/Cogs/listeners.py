@@ -14,10 +14,10 @@ class listeners(commands.Cog):
         #print(f'{VoiceStateBefore.channel}, {VoiceStateAfter.channel}')
         if(VoiceStateBefore.channel == None and VoiceStateAfter.channel != None):
             time_difference = (datetime.utcnow() - self.last_timeStamp).total_seconds()
-            print(len(self.bot.get_channel(975633983314489400).members))
-            if(VoiceStateAfter.channel.id == 975633983314489400 and time_difference > 120 and len(self.bot.get_channel(975633983314489400).members) == 1):
-                await Member.guild.system_channel.send("It's Tea Time")
-            else: self.last_timeStamp = datetime.utcnow()
+            #print(len(self.bot.get_channel(VoiceStateAfter.channel.id).members))
+            if(time_difference > 120 and len(self.bot.get_channel(VoiceStateAfter.channel.id).members) == 1):
+                await Member.guild.system_channel.send("☎️Ring Ring☎️", tts= True)
+            self.last_timeStamp = datetime.utcnow()
             #need to have the user store time in variables
 
             print(f'{Member.name} has joined {VoiceStateAfter.channel}')
@@ -25,6 +25,10 @@ class listeners(commands.Cog):
         if(VoiceStateBefore.channel != None and VoiceStateAfter.channel == None):
             print(f'{Member.name} has left {VoiceStateBefore.channel}')
             #might not need time out variable
+
+    @commands.Cog.listener()
+    async def on_message(self, message:discord.Message):
+        print(message.author.name)
 
 def setup(bot):
     bot.add_cog(listeners(bot))

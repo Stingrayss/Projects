@@ -11,7 +11,7 @@ class Commands(commands.Cog):
         self.bot = bot
 
     #commands
-    @commands.command()
+    @commands.command(hidden=True)
     async def users(self, ctx):
         #client = discord.client
         for guild in self.bot.guilds:
@@ -56,7 +56,6 @@ class Commands(commands.Cog):
     @commands.command()
     async def roll(self, ctx):
         await ctx.send(random.randint(1, 100))
-
 
 def setup(bot):
     bot.add_cog(Commands(bot))
