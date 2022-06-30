@@ -27,11 +27,9 @@ class listeners(commands.Cog):
             print(f'{Member.name} has left {VoiceStateBefore.channel}')
             #might not need time out variable
 
-    @commands.Cog.listener()
-    async def on_message(self, message:discord.Message):
+    #@commands.Cog.listener()
+    #async def on_message(self, message:discord.Message):
         #print(message.author.name)
-        if(random.randint(1, 25) == 7 and message.author.id != 543329883732836359):
-            await message.channel.send("🐠Just Keep Swimming🐠")
 
 def setup(bot):
     bot.add_cog(listeners(bot))
