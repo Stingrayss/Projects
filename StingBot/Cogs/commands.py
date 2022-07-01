@@ -15,15 +15,16 @@ class Commands(commands.Cog):
     async def users(self, ctx):
         user_list = {}
         user = {}
-        user_guilds = []
+        #user_guilds = []
         #cannot figure out how to keep same member.id with different guilds, maybe append?
         #trying to just have one id store all guilds shared for now
         for guild in self.bot.guilds:
             for member in guild.members:
-                user_guilds = member.mutual_guilds
-                print(user_guilds)
-                user = {"name": member.name, "time": 0, "servers": f'{user_guilds}'}
-                user_list[member.id] = user
+                #user_guilds = member.mutual_guilds
+                #print(user_guilds)
+                user = {"name": member.name, "time": 0, "server": f'{guild}'}
+                key = f'{member.id}', f'{guild}'
+                user_list[str(key)] = user
 
         out = open("data.json", "w")
         json.dump(user_list, out, indent = 6)

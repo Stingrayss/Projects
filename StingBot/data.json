@@ -1,502 +1,612 @@
 {
-      "JoeyJoJo817": {
-            "name": "JoeyJoJo817",
-            "time": 0,
-            "server": "Emporium"
-      },
-      "N7": {
+      "('296444821189558273', 'Emporium')": {
             "name": "N7",
             "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Turokman": {
-            "name": "Turokman",
-            "time": 0,
             "server": "Emporium"
       },
-      "Cade": {
-            "name": "Cade",
-            "time": 0,
-            "server": "In N Out"
-      },
-      "Beau": {
-            "name": "Beau",
-            "time": 0,
-            "server": "Emporium"
-      },
-      "Cone": {
-            "name": "Cone",
-            "time": 0,
-            "server": "Emporium"
-      },
-      "kristian": {
-            "name": "kristian",
-            "time": 0,
-            "server": "Emporium"
-      },
-      "Hi It Me Ed": {
-            "name": "Hi It Me Ed",
-            "time": 0,
-            "server": "Emporium"
-      },
-      "FredBoat\u266a\u266a": {
-            "name": "FredBoat\u266a\u266a",
-            "time": 0,
-            "server": "Emporium"
-      },
-      "Coolprinter": {
-            "name": "Coolprinter",
-            "time": 0,
-            "server": "Emporium"
-      },
-      "Genjo": {
-            "name": "Genjo",
-            "time": 0,
-            "server": "Emporium"
-      },
-      "beardedshark": {
-            "name": "beardedshark",
-            "time": 0,
-            "server": "Emporium"
-      },
-      "ProBot \u2728": {
-            "name": "ProBot \u2728",
-            "time": 0,
-            "server": "In N Out"
-      },
-      "Ronnie": {
+      "('293892998880690177', 'Emporium')": {
             "name": "Ronnie",
             "time": 0,
             "server": "Emporium"
       },
-      "Shadowstriker": {
+      "('147451867268513792', 'Emporium')": {
+            "name": "kristian",
+            "time": 0,
+            "server": "Emporium"
+      },
+      "('105032801715290112', 'Emporium')": {
+            "name": "Cade",
+            "time": 0,
+            "server": "Emporium"
+      },
+      "('119520560370679808', 'Emporium')": {
+            "name": "Beau",
+            "time": 0,
+            "server": "Emporium"
+      },
+      "('140529519776890881', 'Emporium')": {
+            "name": "Cone",
+            "time": 0,
+            "server": "Emporium"
+      },
+      "('162415488775880704', 'Emporium')": {
+            "name": "Hi It Me Ed",
+            "time": 0,
+            "server": "Emporium"
+      },
+      "('184405311681986560', 'Emporium')": {
+            "name": "FredBoat\u266a\u266a",
+            "time": 0,
+            "server": "Emporium"
+      },
+      "('212449249718173696', 'Emporium')": {
+            "name": "Coolprinter",
+            "time": 0,
+            "server": "Emporium"
+      },
+      "('226927933556654080', 'Emporium')": {
+            "name": "Genjo",
+            "time": 0,
+            "server": "Emporium"
+      },
+      "('264510073806651402', 'Emporium')": {
+            "name": "beardedshark",
+            "time": 0,
+            "server": "Emporium"
+      },
+      "('282859044593598464', 'Emporium')": {
+            "name": "ProBot \u2728",
+            "time": 0,
+            "server": "Emporium"
+      },
+      "('286627415449403393', 'Emporium')": {
+            "name": "Turokman",
+            "time": 0,
+            "server": "Emporium"
+      },
+      "('312711691940921345', 'Emporium')": {
+            "name": "JoeyJoJo817",
+            "time": 0,
+            "server": "Emporium"
+      },
+      "('316446490530807808', 'Emporium')": {
             "name": "Shadowstriker",
             "time": 0,
             "server": "Emporium"
       },
-      "Streamcord": {
+      "('375805687529209857', 'Emporium')": {
             "name": "Streamcord",
             "time": 0,
             "server": "Emporium"
       },
-      "odyssec": {
+      "('467462327231578113', 'Emporium')": {
             "name": "odyssec",
             "time": 0,
             "server": "Emporium"
       },
-      "StingBot": {
+      "('543329883732836359', 'Emporium')": {
             "name": "StingBot",
             "time": 0,
-            "server": "In N Out"
+            "server": "Emporium"
       },
-      "Terabytes": {
+      "('544640159665225731', 'Emporium')": {
             "name": "Terabytes",
             "time": 0,
             "server": "Emporium"
       },
-      "mithrandir": {
+      "('689177590220718086', 'Emporium')": {
             "name": "mithrandir",
             "time": 0,
             "server": "Emporium"
       },
-      "-Fabriz": {
-            "name": "-Fabriz",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "unitary": {
-            "name": "unitary",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "reefa": {
-            "name": "reefa",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "GokenQ": {
+      "('219186151741718528', 'Sanctuary')": {
             "name": "GokenQ",
             "time": 0,
-            "server": "Coffee Shop"
+            "server": "Sanctuary"
       },
-      "Bathbot": {
-            "name": "Bathbot",
+      "('178541277938319361', 'Sanctuary')": {
+            "name": "reefa",
             "time": 0,
-            "server": "Coffee Shop"
+            "server": "Sanctuary"
       },
-      "Yookie": {
-            "name": "Yookie",
+      "('135529592864768001', 'Sanctuary')": {
+            "name": "unitary",
             "time": 0,
-            "server": "Coffee Shop"
+            "server": "Sanctuary"
       },
-      "Chopsticks": {
-            "name": "Chopsticks",
+      "('105032801715290112', 'Sanctuary')": {
+            "name": "Cade",
             "time": 0,
-            "server": "Coffee Shop"
+            "server": "Sanctuary"
       },
-      "80": {
-            "name": "80",
+      "('112047180948176896', 'Sanctuary')": {
+            "name": "-Fabriz",
             "time": 0,
-            "server": "Coffee Shop"
+            "server": "Sanctuary"
       },
-      "lenaime": {
-            "name": "lenaime",
+      "('543329883732836359', 'Sanctuary')": {
+            "name": "StingBot",
             "time": 0,
-            "server": "Coffee Shop"
+            "server": "Sanctuary"
       },
-      "Hideki": {
-            "name": "Hideki",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Krimmer": {
-            "name": "Krimmer",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Shiro": {
-            "name": "Shiro",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "JTeeG": {
-            "name": "JTeeG",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Loggy": {
-            "name": "Loggy",
-            "time": 0,
-            "server": "In N Out"
-      },
-      "Cryptic": {
-            "name": "Cryptic",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Tommy": {
-            "name": "Tommy",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Xenophlux": {
-            "name": "Xenophlux",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "mr. spark": {
-            "name": "mr. spark",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "billy bob": {
-            "name": "billy bob",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "ahyoj": {
+      "('715478181448122388', 'Coffee Shop')": {
             "name": "ahyoj",
             "time": 0,
             "server": "Coffee Shop"
       },
-      "nat": {
-            "name": "nat",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "IntoxicatorGod": {
-            "name": "IntoxicatorGod",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Shmeag": {
-            "name": "Shmeag",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Knowlehn": {
-            "name": "Knowlehn",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Spirit": {
-            "name": "Spirit",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Daniel \ud83d\udd06": {
-            "name": "Daniel \ud83d\udd06",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "THE BIODADDY": {
-            "name": "THE BIODADDY",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Giga Chad": {
-            "name": "Giga Chad",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Kuroishimi": {
-            "name": "Kuroishimi",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "kiwibaitnz": {
-            "name": "kiwibaitnz",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "tine": {
-            "name": "tine",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "AsheFlash31": {
-            "name": "AsheFlash31",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "ediggity": {
-            "name": "ediggity",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "akpadilla": {
-            "name": "akpadilla",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Katze": {
-            "name": "Katze",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "solon": {
-            "name": "solon",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "leanne": {
-            "name": "leanne",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "ki": {
-            "name": "ki",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "kphxn": {
-            "name": "kphxn",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Stingray": {
-            "name": "Stingray",
-            "time": 0,
-            "server": "Stingray"
-      },
-      "Vincent.": {
-            "name": "Vincent.",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Ruuckie": {
-            "name": "Ruuckie",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Tatsu": {
-            "name": "Tatsu",
-            "time": 0,
-            "server": "Stingray"
-      },
-      "Paroxysm": {
-            "name": "Paroxysm",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Bambi": {
-            "name": "Bambi",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "mehsachi": {
-            "name": "mehsachi",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "MLGminions": {
-            "name": "MLGminions",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "owo": {
-            "name": "owo",
-            "time": 0,
-            "server": "Stingray"
-      },
-      "Chrissss": {
-            "name": "Chrissss",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "pineapple": {
-            "name": "pineapple",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Sutida": {
-            "name": "Sutida",
-            "time": 0,
-            "server": "In N Out"
-      },
-      "Dough": {
-            "name": "Dough",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Mr.T": {
-            "name": "Mr.T",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Dillan": {
+      "('686270831826960651', 'Coffee Shop')": {
             "name": "Dillan",
             "time": 0,
             "server": "Coffee Shop"
       },
-      "AliZ": {
-            "name": "AliZ",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Michael Ewy": {
-            "name": "Michael Ewy",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Frosty": {
-            "name": "Frosty",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Austin\ud83e\udd76": {
-            "name": "Austin\ud83e\udd76",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Bennyluwho": {
-            "name": "Bennyluwho",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "DNutz": {
-            "name": "DNutz",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "CholoRolo": {
-            "name": "CholoRolo",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "raylen": {
-            "name": "raylen",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "toya": {
-            "name": "toya",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Smubble": {
-            "name": "Smubble",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Vin": {
-            "name": "Vin",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Chopparice": {
-            "name": "Chopparice",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Master Oogway": {
-            "name": "Master Oogway",
-            "time": 0,
-            "server": "Coffee Shop"
-      },
-      "Kylie": {
-            "name": "Kylie",
-            "time": 0,
-            "server": "In N Out"
-      },
-      "hytica": {
+      "('604934207315247126', 'Coffee Shop')": {
             "name": "hytica",
             "time": 0,
             "server": "Coffee Shop"
       },
-      "love&lemons": {
+      "('239259757960101889', 'Coffee Shop')": {
+            "name": "Dough",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('222898031341731841', 'Coffee Shop')": {
+            "name": "Frosty",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('190276602200850435', 'Coffee Shop')": {
+            "name": "Loggy",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('297073686916366336', 'Coffee Shop')": {
+            "name": "Bathbot",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('642932582996246547', 'Coffee Shop')": {
+            "name": "Yookie",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('356650044977315842', 'Coffee Shop')": {
+            "name": "Chopsticks",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('295331426163884034', 'Coffee Shop')": {
+            "name": "80",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('684639403834081310', 'Coffee Shop')": {
+            "name": "lenaime",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('348568550509903896', 'Coffee Shop')": {
+            "name": "Hideki",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('280444474948190210', 'Coffee Shop')": {
+            "name": "Krimmer",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('355176911741255692', 'Coffee Shop')": {
+            "name": "Shiro",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('225109572514349056', 'Coffee Shop')": {
+            "name": "JTeeG",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('319123953778163712', 'Coffee Shop')": {
+            "name": "Cryptic",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('135529592864768001', 'Coffee Shop')": {
+            "name": "unitary",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('261326300634021890', 'Coffee Shop')": {
+            "name": "Tommy",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('323118599952924673', 'Coffee Shop')": {
+            "name": "Xenophlux",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('244634647621926913', 'Coffee Shop')": {
+            "name": "mr. spark",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('148203285898199040', 'Coffee Shop')": {
+            "name": "billy bob",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('474074437176786955', 'Coffee Shop')": {
+            "name": "nat",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('398194159623864320', 'Coffee Shop')": {
+            "name": "IntoxicatorGod",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('663858531216130056', 'Coffee Shop')": {
+            "name": "Shmeag",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('298217998454620180', 'Coffee Shop')": {
+            "name": "Knowlehn",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('365616695454203925', 'Coffee Shop')": {
+            "name": "Spirit",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('229664515766091777', 'Coffee Shop')": {
+            "name": "Daniel \ud83d\udd06",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('191754024402288641', 'Coffee Shop')": {
+            "name": "THE BIODADDY",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('218930953832103936', 'Coffee Shop')": {
+            "name": "Giga Chad",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('161573204182171648', 'Coffee Shop')": {
+            "name": "Kuroishimi",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('92021826464526336', 'Coffee Shop')": {
+            "name": "kiwibaitnz",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('591443089223057459', 'Coffee Shop')": {
+            "name": "tine",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('296444821189558273', 'Coffee Shop')": {
+            "name": "N7",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('178541277938319361', 'Coffee Shop')": {
+            "name": "reefa",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('182650664764047360', 'Coffee Shop')": {
+            "name": "AsheFlash31",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('155547110207520768', 'Coffee Shop')": {
+            "name": "ediggity",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('343952819969327104', 'Coffee Shop')": {
+            "name": "akpadilla",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('300535832417271808', 'Coffee Shop')": {
+            "name": "Katze",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('868324368596471868', 'Coffee Shop')": {
+            "name": "solon",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('545077881525764098', 'Coffee Shop')": {
+            "name": "leanne",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('224258782086168576', 'Coffee Shop')": {
+            "name": "ki",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('764379075309338654', 'Coffee Shop')": {
+            "name": "kphxn",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('721305814010429522', 'Coffee Shop')": {
+            "name": "Stingray",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('377620425187786754', 'Coffee Shop')": {
+            "name": "Vincent.",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('320438245618089995', 'Coffee Shop')": {
+            "name": "Ruuckie",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('543329883732836359', 'Coffee Shop')": {
+            "name": "StingBot",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('105032801715290112', 'Coffee Shop')": {
+            "name": "Cade",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('172002275412279296', 'Coffee Shop')": {
+            "name": "Tatsu",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('219186151741718528', 'Coffee Shop')": {
+            "name": "GokenQ",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('787823214885339156', 'Coffee Shop')": {
+            "name": "Paroxysm",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('249621567032655872', 'Coffee Shop')": {
+            "name": "Bambi",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('404785377245790211', 'Coffee Shop')": {
+            "name": "mehsachi",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('467422159267168268', 'Coffee Shop')": {
+            "name": "MLGminions",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('289066747443675143', 'Coffee Shop')": {
+            "name": "owo",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('177940601810059264', 'Coffee Shop')": {
+            "name": "Chrissss",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('332391468373377036', 'Coffee Shop')": {
+            "name": "pineapple",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('641793959118766091', 'Coffee Shop')": {
+            "name": "Sutida",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('712586188204015657', 'Coffee Shop')": {
+            "name": "Dough",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('152913175312859136', 'Coffee Shop')": {
+            "name": "Mr.T",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('282598484589281282', 'Coffee Shop')": {
+            "name": "AliZ",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('247587909861900288', 'Coffee Shop')": {
+            "name": "Michael Ewy",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('240830348970164225', 'Coffee Shop')": {
+            "name": "Austin\ud83e\udd76",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('231196239339716608', 'Coffee Shop')": {
+            "name": "Bennyluwho",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('193575575363911680', 'Coffee Shop')": {
+            "name": "DNutz",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('141051113120989185', 'Coffee Shop')": {
+            "name": "CholoRolo",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('186896031739281409', 'Coffee Shop')": {
+            "name": "raylen",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('678828512144261123', 'Coffee Shop')": {
+            "name": "toya",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('297870593657929739', 'Coffee Shop')": {
+            "name": "Smubble",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('211224854966304769', 'Coffee Shop')": {
+            "name": "Vin",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('249227764299857920', 'Coffee Shop')": {
+            "name": "Chopparice",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('355930462864146452', 'Coffee Shop')": {
+            "name": "Master Oogway",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('617815420514074664', 'Coffee Shop')": {
+            "name": "Kylie",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('656157857267449867', 'Coffee Shop')": {
             "name": "love&lemons",
             "time": 0,
             "server": "Coffee Shop"
       },
-      "Khai": {
+      "('112047180948176896', 'Coffee Shop')": {
+            "name": "-Fabriz",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('97207894285492224', 'Coffee Shop')": {
             "name": "Khai",
             "time": 0,
             "server": "Coffee Shop"
       },
-      "fjszn": {
+      "('250125184927924225', 'Coffee Shop')": {
             "name": "fjszn",
             "time": 0,
             "server": "Coffee Shop"
       },
-      "flan": {
+      "('280757265726832649', 'Coffee Shop')": {
             "name": "flan",
             "time": 0,
             "server": "Coffee Shop"
       },
-      "mmmehginhm": {
+      "('282859044593598464', 'Coffee Shop')": {
+            "name": "ProBot \u2728",
+            "time": 0,
+            "server": "Coffee Shop"
+      },
+      "('695163457091272745', 'Coffee Shop')": {
             "name": "mmmehginhm",
             "time": 0,
             "server": "Coffee Shop"
       },
-      "zeke": {
+      "('177545683178487808', 'Coffee Shop')": {
             "name": "zeke",
             "time": 0,
             "server": "Coffee Shop"
       },
-      "kashii": {
+      "('500889130998300674', 'Coffee Shop')": {
             "name": "kashii",
             "time": 0,
             "server": "Coffee Shop"
       },
-      "Cronosx96": {
+      "('191795301084823553', 'Coffee Shop')": {
             "name": "Cronosx96",
             "time": 0,
             "server": "Coffee Shop"
       },
-      "Twji": {
+      "('277993879607836673', 'Coffee Shop')": {
             "name": "Twji",
             "time": 0,
             "server": "Coffee Shop"
       },
-      "Zumi_Zoom": {
+      "('695787394397372476', 'Coffee Shop')": {
             "name": "Zumi_Zoom",
             "time": 0,
             "server": "Coffee Shop"
       },
-      "yelsew": {
+      "('371392626869534720', 'Coffee Shop')": {
             "name": "yelsew",
             "time": 0,
             "server": "Coffee Shop"
+      },
+      "('105032801715290112', 'Stingray')": {
+            "name": "Cade",
+            "time": 0,
+            "server": "Stingray"
+      },
+      "('172002275412279296', 'Stingray')": {
+            "name": "Tatsu",
+            "time": 0,
+            "server": "Stingray"
+      },
+      "('289066747443675143', 'Stingray')": {
+            "name": "owo",
+            "time": 0,
+            "server": "Stingray"
+      },
+      "('543329883732836359', 'Stingray')": {
+            "name": "StingBot",
+            "time": 0,
+            "server": "Stingray"
+      },
+      "('721305814010429522', 'Stingray')": {
+            "name": "Stingray",
+            "time": 0,
+            "server": "Stingray"
+      },
+      "('105032801715290112', 'In N Out')": {
+            "name": "Cade",
+            "time": 0,
+            "server": "In N Out"
+      },
+      "('190276602200850435', 'In N Out')": {
+            "name": "Loggy",
+            "time": 0,
+            "server": "In N Out"
+      },
+      "('282859044593598464', 'In N Out')": {
+            "name": "ProBot \u2728",
+            "time": 0,
+            "server": "In N Out"
+      },
+      "('543329883732836359', 'In N Out')": {
+            "name": "StingBot",
+            "time": 0,
+            "server": "In N Out"
+      },
+      "('617815420514074664', 'In N Out')": {
+            "name": "Kylie",
+            "time": 0,
+            "server": "In N Out"
+      },
+      "('641793959118766091', 'In N Out')": {
+            "name": "Sutida",
+            "time": 0,
+            "server": "In N Out"
       }
 }
