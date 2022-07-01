@@ -32,7 +32,7 @@ class Commands(commands.Cog):
     @commands.command(hidden=True)
     @commands.has_permissions(administrator=True)
     async def data(self, ctx):
-        await ctx.send(file=discord.File(r'./data.json'))
+        await self.bot.get_channel(734204331552669738).send(file=discord.File(r'./data.json'))
 
     @commands.command()
     async def predict(self, ctx, *, question):
