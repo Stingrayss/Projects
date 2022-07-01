@@ -4,8 +4,6 @@ import time
 from discord.ext import commands, tasks
 import random
 
-
-
 class listeners(commands.Cog):
 
     def __init__(self, bot):

@@ -29,6 +29,11 @@ class Commands(commands.Cog):
         #json.dump(user_list, out, indent = 6)
         #out.close()
 
+    @commands.command(hidden=True)
+    @commands.has_permissions(administrator=True)
+    async def data(self, ctx):
+        await ctx.send(file=discord.File(r'./data.json'))
+
     @commands.command()
     async def predict(self, ctx, *, question):
         responses = ["It is certain.",
