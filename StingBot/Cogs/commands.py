@@ -1,6 +1,8 @@
+from email.policy import default
 import discord
 from discord import Spotify
 import json
+from collections import defaultdict
 import random
 from discord.ext import commands
 
@@ -10,26 +12,22 @@ class Commands(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    #commands
-    @commands.command(hidden=True)
-    async def users(self, ctx):
-        user_list = {}
-        user = {}
-        #user_guilds = []
-        #cannot figure out how to keep same member.id with different guilds, maybe append?
-        #trying to just have one id store all guilds shared for now
-        for guild in self.bot.guilds:
-            for member in guild.members:
-                #user_guilds = member.mutual_guilds
-                #print(user_guilds)
-                user = {"name": member.name, "time": 0, "server": f'{guild}'}
-                key = f'{member.id}', f'{guild}'
-                user_list[str(key)] = user
+    #This was the original command to grab all users and give them
+    #base variables for data I wanted to track
+    #Adding new variables will need a new command for appending
+    #@commands.command(hidden=True)
+    #@commands.has_permissions(administrator=True)
+    #async def users(self, ctx):
+        #user_list = defaultdict(list)
+        #user = {}
+        #for guild in self.bot.guilds:
+            #for member in guild.members:
+                #user = {"name": member.name, "messages": 0, "voice_join": 0, "voice_leave": 0, "last_session": 0, "time": 0, "server": f'{guild}'}
+                #user_list[member.id].append(user)
 
-        out = open("data.json", "w")
-        json.dump(user_list, out, indent = 6)
-        out.close()
-
+        #out = open("data.json", "w")
+        #json.dump(user_list, out, indent = 6)
+        #out.close()
 
     @commands.command()
     async def predict(self, ctx, *, question):
