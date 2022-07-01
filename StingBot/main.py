@@ -22,7 +22,7 @@ with open("configuration.json", "r") as config:
 class Greetings(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
-		self._last_member = None
+		#self._last_member = None
 
 # Intents
 intents = discord.Intents.all()
@@ -79,20 +79,5 @@ async def reload(ctx):
 async def logout(ctx):
     print(f'{bot.user} is logging out')
     await bot.close()
-
-@bot.command(aliases = ['s'])
-async def spotify(ctx, user: discord.Member = None):
-    if user == None:
-        user = ctx.author
-        pass
-    if user.activities:
-        for activity in user.activities:
-            if isinstance(activity, Spotify):
-                embed = discord.Embed(title = f"{user.name}'s Spotify", description = "Song \n {}".format(activity.title), color = 0xFFFFFF)
-                embed.set_thumbnail(url=activity.album_cover_url)
-                embed.add_field(name="Artist", value=activity.artist)
-                embed.add_field(name="Album", value=activity.album)
-                embed.set_footer(text="Song started at {}".format(activity.created_at.strftime("%H:%M")), icon_url = ctx.author.avatar_url)
-                await ctx.send(embed=embed)
 
 bot.run(token)

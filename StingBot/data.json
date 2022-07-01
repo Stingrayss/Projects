@@ -29,11 +29,11 @@
             },
             {
                   "name": "Cade",
-                  "messages": 18,
-                  "voice_join": 0,
-                  "voice_leave": 0,
-                  "last_session": 0,
-                  "time": 0,
+                  "messages": 25,
+                  "voice_join": 1656679705.7774699,
+                  "voice_leave": 1656679706.934183,
+                  "last_session": 0.019278550148010255,
+                  "time": 0.06014469861984253,
                   "server": "Stingray"
             },
             {
@@ -279,7 +279,7 @@
             },
             {
                   "name": "StingBot",
-                  "messages": 4,
+                  "messages": 18,
                   "voice_join": 0,
                   "voice_leave": 0,
                   "last_session": 0,
@@ -804,7 +804,7 @@
             },
             {
                   "name": "Stingray",
-                  "messages": 0,
+                  "messages": 12,
                   "voice_join": 0,
                   "voice_leave": 0,
                   "last_session": 0,
