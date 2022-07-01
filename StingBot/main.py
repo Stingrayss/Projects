@@ -1,6 +1,6 @@
 import discord
-from discord import Spotify
 from discord.ext import commands
+import datetime
 import json
 import os
 import logging
@@ -61,23 +61,23 @@ async def help(ctx):
 async def load(ctx):
     for x in range(0, len(extensions)):
         bot.load_extension(f'Cogs.{extensions[x]}')
-    print(f'{extensions} has been loaded')
+    print(f'{datetime.datetime.now()}:DEBUG: {extensions} has been loaded')
     
 @bot.command(hidden=True)
 async def unload(ctx):
     for x in range(0, len(extensions)):
         bot.unload_extension(f'Cogs.{extensions[x]}')
-    print(f'{extensions} has been unloaded')
+    print(f'{datetime.datetime.now()}:DEBUG: {extensions} has been unloaded')
 
 @bot.command(hidden=True)
 async def reload(ctx):
     for x in range(0, len(extensions)):
         bot.reload_extension(f'Cogs.{extensions[x]}')
-    print(f'{extensions} has been reloaded')
+    print(f'{datetime.datetime.now()}:DEBUG: {extensions} has been reloaded')
 
 @bot.command(hidden=True, aliases = ['l'])
 async def logout(ctx):
-    print(f'{bot.user} is logging out')
+    print(f'{datetime.datetime.now()}:INFO: {bot.user} is logging out')
     await bot.close()
 
 bot.run(token)

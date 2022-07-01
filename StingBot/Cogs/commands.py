@@ -31,7 +31,7 @@ class Commands(commands.Cog):
     async def data(self, ctx):
         if(ctx.author.id == 105032801715290112):
             await self.bot.get_channel(734204331552669738).send(file=discord.File(r'./data.json'))
-        else: print(f'{datetime.datetime.now()}: {ctx.author} attempted to retrieve user data')
+        else: print(f'{datetime.datetime.now()}:WARNING: {ctx.author} attempted to retrieve user data')
 
     @commands.command()
     async def predict(self, ctx, *, question):

@@ -26,7 +26,7 @@ class listeners(commands.Cog):
                     json.dump(users, data, indent = 6)
                     data.close()
 
-            print(f'{datetime.datetime.now()}: {Member.name} has joined {VoiceStateAfter.channel}')
+            print(f'{datetime.datetime.now()}:INFO: {Member.name} has joined {VoiceStateAfter.channel}')
         
         #checks to see if the user has left a channel
         if(VoiceStateAfter.channel == None):
@@ -47,7 +47,7 @@ class listeners(commands.Cog):
                     data = open('data.json', 'w')
                     json.dump(users, data, indent = 6)
                     data.close()
-            print(f'{datetime.datetime.now()}: {Member.name} has left {VoiceStateBefore.channel}')
+            print(f'{datetime.datetime.now()}:INFO: {Member.name} has left {VoiceStateBefore.channel}')
 
     @commands.Cog.listener()
     async def on_message(self, message):
