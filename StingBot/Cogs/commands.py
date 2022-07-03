@@ -1,7 +1,12 @@
+from typing import OrderedDict
 import discord
 import random
 import datetime
+import json
 from discord.ext import commands
+
+#only need for users command
+#from collections import defaultdict
 
 #initalize the cog
 class Commands(commands.Cog):
@@ -19,17 +24,28 @@ class Commands(commands.Cog):
         #user = {}
         #for guild in self.bot.guilds:
             #for member in guild.members:
-                #user = {"name": member.name, "messages": 0, "voice_join": 0, "voice_leave": 0, "last_session": 0, "time": 0, "server": f'{guild}'}
+                #user = {"name": member.name, "server": f'{guild}', "tracking": True, "messages": 0, "time": 0, "last_session": 0, "voice_join": 0, "voice_leave": 0}
                 #user_list[member.id].append(user)
 
         #out = open("data.json", "w")
-        #json.dump(user_list, out, indent = 6)
+        #json.dump(user_list, out, indent = 4)
         #out.close()
 
     @commands.command(hidden=True)
     @commands.has_permissions(administrator=True)
     async def data(self, ctx):
         if(ctx.author.id == 105032801715290112):
+            file = open('data.json', 'r')
+            json_data = json.load(file)
+            file.close()
+            #not sure how this orders the data, but it was the best I could do
+            #I don't think ordering by name values is possible
+            json_data = OrderedDict(sorted(json_data.items(), key=lambda k: k[0][1]))
+
+            file = open('data.json', 'w')
+            json.dump(json_data, file, indent = 4)
+            file.close()
+            
             await self.bot.get_channel(734204331552669738).send(file=discord.File(r'./data.json'))
             print(f'{datetime.datetime.now()}:INFO: {ctx.author} retrieved user data')
         else: print(f'{datetime.datetime.now()}:WARNING: {ctx.author} attempted to retrieve user data')
