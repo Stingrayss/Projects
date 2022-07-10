@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
-import datetime
+from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 import json
 import os
 import logging
@@ -59,25 +60,29 @@ async def help(ctx):
 
 @bot.command(hidden=True)
 async def load(ctx):
+    date = datetime.now(ZoneInfo("America/Los_Angeles"))
     for x in range(0, len(extensions)):
         bot.load_extension(f'Cogs.{extensions[x]}')
-    print(f'{datetime.datetime.now()}:DEBUG: {extensions} has been loaded')
+    print(f'{date}:DEBUG: {extensions} has been loaded')
     
 @bot.command(hidden=True)
 async def unload(ctx):
+    date = datetime.now(ZoneInfo("America/Los_Angeles"))
     for x in range(0, len(extensions)):
         bot.unload_extension(f'Cogs.{extensions[x]}')
-    print(f'{datetime.datetime.now()}:DEBUG: {extensions} has been unloaded')
+    print(f'{date}:DEBUG: {extensions} has been unloaded')
 
 @bot.command(hidden=True)
 async def reload(ctx):
+    date = datetime.now(ZoneInfo("America/Los_Angeles"))
     for x in range(0, len(extensions)):
         bot.reload_extension(f'Cogs.{extensions[x]}')
-    print(f'{datetime.datetime.now()}:DEBUG: {extensions} has been reloaded')
+    print(f'{date}:DEBUG: {extensions} has been reloaded')
 
 @bot.command(hidden=True, aliases = ['l'])
 async def logout(ctx):
-    print(f'{datetime.datetime.now()}:INFO: {bot.user} is logging out')
+    date = datetime.now(ZoneInfo("America/Los_Angeles"))
+    print(f'{date}:INFO: {bot.user} is logging out')
     await bot.close()
 
 bot.run(token)

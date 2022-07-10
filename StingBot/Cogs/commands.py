@@ -1,12 +1,22 @@
 from typing import OrderedDict
 import discord
 import random
-import datetime
+from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 import json
 from discord.ext import commands
 
 #only need for users command
 #from collections import defaultdict
+
+def read_json():
+    with open('data.json', 'r') as data: 
+        users = json.load(data)
+        return users
+
+def write_json(users):
+    with open('data.json', 'w') as data:
+        json.dump(users, data, indent = 4)
 
 #initalize the cog
 class Commands(commands.Cog):
@@ -20,20 +30,65 @@ class Commands(commands.Cog):
     #@commands.command(hidden=True)
     #@commands.has_permissions(administrator=True)
     #async def users(self, ctx):
-        #user_list = defaultdict(list)
+        #server_list = defaultdict(dict)
         #user = {}
         #for guild in self.bot.guilds:
             #for member in guild.members:
-                #user = {"name": member.name, "server": f'{guild}', "tracking": True, "messages": 0, "time": 0, "last_session": 0, "voice_join": 0, "voice_leave": 0}
-                #user_list[member.id].append(user)
+                #user = {"server": guild.name, "name": member.name, "tracking": True, "inactive": 0, "messages": 0, "time": 0, "last_session": 0, "voice_join": 0, "voice_leave": 0}
+                #server_list[guild.id][member.id] = user
 
-        #out = open("data.json", "w")
-        #json.dump(user_list, out, indent = 4)
+        #out = open("data2.json", "w")
+        #json.dump(server_list, out, indent = 4)
         #out.close()
 
+        #THIS CODE IS UGLY BUT WORKS, ONLY NEEDED TO TRANSFER DATA
+
+        #users = read_json()
+
+        #with open('data2.json', 'r') as data2: 
+            #users_data2 = json.load(data2)
+
+            #for guild in users_data2:
+                #user_list = users_data2[guild]
+                #for key in user_list:
+                    #users_data2[guild][key]['time'] = users[guild][key]['time']
+                    #users_data2[guild][key]['messages'] = users[guild][key]['messages']
+                    #users_data2[guild][key]['last_session'] = users[guild][key]['last_session']
+                    #users_data2[guild][key]['voice_join'] = users[guild][key]['voice_join']
+                    #users_data2[guild][key]['voice_leave'] = users[guild][key]['voice_leave']
+
+            #with open('data2.json', 'w') as data:
+                #json.dump(users_data2, data, indent = 4)
+
+    @commands.command(hidden=True)
+    async def leaderboard(self, ctx):
+        topten = []
+        data = read_json()
+        for key in data[str(ctx.guild.id)]:
+            user = data[str(ctx.guild.id)][key]
+            if len(topten) < 10:
+                tuple = user["name"], user["time"]
+                topten.append(tuple)
+            else:
+                topten.sort(key=lambda x : x[1], reverse = True)
+                if user["time"] > topten[-1][1]:
+                    tuple = user["name"], user["time"]
+                    topten[-1] = tuple
+
+        topten.sort(key=lambda x : x[1], reverse = True)
+
+        #MAKE THIS LOOK PRETTY AT SOME POINT
+        users = ''
+        for i in range (0, len(topten)): 
+            users += f'{i + 1}. {topten[i][0]}: {round(topten[i][1], 1) } minutes\n\n'
+        embed = discord.Embed(title = 'Voice Leaderboard', color=discord.Colour.dark_blue())
+        embed.add_field(name = f'Top 10:', value=users)
+        await ctx.send(embed = embed)
+                  
     @commands.command(hidden=True)
     @commands.has_permissions(administrator=True)
     async def data(self, ctx):
+        date = datetime.now(ZoneInfo("America/Los_Angeles"))
         if(ctx.author.id == 105032801715290112):
             file = open('data.json', 'r')
             json_data = json.load(file)
@@ -47,8 +102,8 @@ class Commands(commands.Cog):
             file.close()
             
             await self.bot.get_channel(734204331552669738).send(file=discord.File(r'./data.json'))
-            print(f'{datetime.datetime.now()}:INFO: {ctx.author} retrieved user data')
-        else: print(f'{datetime.datetime.now()}:WARNING: {ctx.author} attempted to retrieve user data')
+            print(f'{date}:INFO: {ctx.author} retrieved user data')
+        else: print(f'{date}:WARNING: {ctx.author} attempted to retrieve user data')
 
     @commands.command()
     async def predict(self, ctx, *, question):

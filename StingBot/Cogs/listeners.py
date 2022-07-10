@@ -1,5 +1,6 @@
 import json
-import datetime
+from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 import time
 from discord.ext import commands
 from collections import defaultdict
@@ -34,7 +35,7 @@ class listeners(commands.Cog):
         #user = {}
 
         #for member in guild.members:
-            #user = {"name": member.name, "server": f'{member.guild}', "tracking": True, "messages": 0, "time": 0, "last_session": 0, "voice_join": 0, "voice_leave": 0}
+            #user = {"id": member.id, "name": member.name, "tracking": True, "messages": 0, "time": 0, "last_session": 0, "voice_join": 0, "voice_leave": 0}
             #user_list[member.id].append(user)
 
         #users = read_json()
@@ -43,105 +44,72 @@ class listeners(commands.Cog):
             #users.update(user_list)
             #json.dump(users, data, indent = 4)
 
+    #sets a user's tracking variable to false upon bot removal from guild
     @commands.Cog.listener()
     async def on_guild_remove(self, guild):
-        #grabs all of the users from the data file
-        users = read_json()
+        data = read_json()
 
-        #gets every user that was in the guild
-        #so that it may be accessed from the json file
         for member in guild.members:
-            #this grabs a user with a specific key from the json file
-            user = users[f"{member.id}"]
-            #if the user had a server that matched
-            #update it to mark that it is no longer being tracked
-            for dict in user:
-                if(str(dict['server']) == str(guild)):
-                    dict['tracking'] = False
-                    write_json(users)
+            data[str(guild.id)][str(member.id)]['tracking'] = False
+            write_json(data)
 
+    #sets a user's tracking variable to false upon member removal from guild
     @commands.Cog.listener()
     async def on_member_remove(self, member):
-        users = read_json()
-
-        #if the member is found in the data,
-        #and they had a server that matches the one they left
-        #set tracking to false
-        if str(member.id) in users:   
-            user = users[f"{member.id}"]
-            for dict in user:
-                if(str(dict['server']) == str(member.guild)):
-                    dict['tracking'] = False
-                    write_json(users)
-            
-        print(f'{datetime.datetime.now()}:INFO: {member.name} has been removed from: {member.guild}')
+        data = read_json()
+        
+        data[str(member.guild.id)][str(member.id)]['tracking'] = False
+        write_json(data)
+        date = datetime.now(ZoneInfo("America/Los_Angeles"))
+        print(f'{date}:INFO: {member.name} has been removed from: {member.guild}')
     
     @commands.Cog.listener()
     async def on_member_join(self, member):
-        users = read_json()
-        #if the user doesn't exist in the data, make a list of objects for them
-        if not str(member.id) in users:
-            user_list = defaultdict(list)
-            user = {"name": member.name, "server": f'{member.guild}', "tracking": True, "messages": 0, "time": 0, "last_session": 0, "voice_join": 0, "voice_leave": 0}
-            user_list[member.id].append(user)
-            users.update(user_list)
-            write_json(users)
-        else:
-            user = users[f"{member.id}"]
-            #if they did exist, check if they used to be in the server
-            #if they were set tracking back to true
-            for dict in user:
-                if(str(dict['server']) == str(member.guild)):
-                    dict['tracking'] = True
-                    write_json(users)
-                    return
-            #the user existed, but not in this server, so make a new data object 
-            #and push it back into their list
-            user_add = {"name": member.name, "server": f'{member.guild}', "tracking": True, "messages": 0, "time": 0, "last_session": 0, "voice_join": 0, "voice_leave": 0}
-            user.append(user_add)
-            write_json(users)
+        data = read_json()
 
-        print(f'{datetime.datetime.now()}:INFO: {member.name} has joined: {member.guild}')
+        print(not member.id in data[str(member.guild.id)].keys())
+        #user doesn't exist in data, make new dictionary for them
+        if not str(member.id) in data[str(member.guild.id)]:
+            user = {"server": member.guild.name, "name": member.name, "tracking": True, "inactive": 0, "messages": 0, "time": 0, "last_session": 0, "voice_join": 0, "voice_leave": 0}
+            data[str(member.guild.id)][str(member.id)] = user
+        else:
+            data[str(member.guild.id)][str(member.id)]['tracking'] = True
+
+        write_json(data)
+        date = datetime.now(ZoneInfo("America/Los_Angeles"))
+        print(f'{date}:INFO: {member.name} has joined: {member.guild}')
 
     @commands.Cog.listener()
-    async def on_voice_state_update(self, Member, VoiceStateBefore, VoiceStateAfter):
+    async def on_voice_state_update(self, member, VoiceStateBefore, VoiceStateAfter):
+        data = read_json()
+        user = data[str(member.guild.id)][str(member.id)]
+        date = datetime.now(ZoneInfo("America/Los_Angeles"))
         #checks to see if a user is currently in a channel
         if(VoiceStateBefore.channel == None and VoiceStateAfter.channel != None):
-            users = read_json()
-            user = users[f"{Member.id}"]
-            #makes sure that the variable being changed is the one for the correct server
-            for dict in user:
-                if(str(dict['server']) == str(Member.guild)):
-                    dict['voice_join'] = round(time.time(), 3)
-                    write_json(users)
+            user['voice_join'] = round(time.time(), 3)
 
-            print(f'{datetime.datetime.now()}:INFO: {Member.name} has joined {VoiceStateAfter.channel}')
+            print(f'{date}:INFO: {member.name} has joined {VoiceStateAfter.channel}')
         
         #checks to see if the user has left a channel
-        if(VoiceStateBefore.channel != None and VoiceStateAfter.channel == None):
-            users = read_json()
-            user = users[f"{Member.id}"]
+        elif(VoiceStateBefore.channel != None and VoiceStateAfter.channel == None):
+            user['voice_leave'] = round(time.time(), 3)
+            #inserts the time spent in a voice channel in minute notation
+            user['last_session'] = round((user['voice_leave'] - user['voice_join']) / 60, 3)
+            #updates the total time spent in a voice channel in minute notation
+            user['time'] += user['last_session']
+            write_json(data)
 
-            for dict in user:
-                if(str(dict['server']) == str(Member.guild)):
-                    dict['voice_leave'] = round(time.time(), 3)
-                    #inserts the time spent in a voice channel in minute notation
-                    dict['last_session'] = round((dict['voice_leave'] - dict['voice_join']) / 60, 3)
-                    #updates the total time spent in a voice channel in minute notation
-                    dict['time'] += round((dict['voice_leave'] - dict['voice_join']) / 60, 3)
-                    write_json(users)
+            print(f'{date}:INFO: {member.name} has left {VoiceStateBefore.channel}')
 
-            print(f'{datetime.datetime.now()}:INFO: {Member.name} has left {VoiceStateBefore.channel}')
+        write_json(data)
 
+    #increments a user's messages variable by 1 whenever a message is sent
     @commands.Cog.listener()
     async def on_message(self, message):
-        users = read_json()
-        user = users[f"{message.author.id}"]
+        data = read_json()
 
-        for dict in user:
-            if(str(dict['server']) == str(message.author.guild)):
-                dict['messages'] += 1
-                write_json(users)
+        data[str(message.guild.id)][str(message.author.id)]['messages'] += 1
+        write_json(data)
 
 def setup(bot):
     bot.add_cog(listeners(bot))
