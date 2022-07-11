@@ -96,8 +96,7 @@ class listeners(commands.Cog):
             #inserts the time spent in a voice channel in minute notation
             user['last_session'] = round((user['voice_leave'] - user['voice_join']) / 60, 3)
             #updates the total time spent in a voice channel in minute notation
-            user['time'] += user['last_session']
-            write_json(data)
+            user['time'] += round((user['voice_leave'] - user['voice_join']) / 60, 3)
 
             print(f'{date}:INFO: {member.name} has left {VoiceStateBefore.channel}')
 
