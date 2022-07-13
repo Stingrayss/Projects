@@ -3,9 +3,9 @@
         "105032801715290112": {
             "server": "Stingray",
             "name": "Cade",
-            "tracking": false,
+            "tracking": true,
             "inactive": 0,
-            "messages": 745,
+            "messages": 775,
             "time": 37.812999999999995,
             "last_session": 0.19,
             "voice_join": 1657709043.859,
@@ -14,7 +14,7 @@
         "543329883732836359": {
             "server": "Stingray",
             "name": "StingBot",
-            "tracking": false,
+            "tracking": true,
             "inactive": 0,
             "messages": 275,
             "time": 0,
@@ -25,13 +25,13 @@
         "721305814010429522": {
             "server": "Stingray",
             "name": "Stingray",
-            "tracking": false,
+            "tracking": true,
             "inactive": 0,
-            "messages": 0,
-            "time": 0,
-            "last_session": 0,
-            "voice_join": 0,
-            "voice_leave": 0
+            "messages": 84,
+            "time": 10.234,
+            "last_session": 0.843,
+            "voice_join": 1657706143.075,
+            "voice_leave": 1657706193.663
         }
     },
     "528437158097190923": {
