@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from datetime import datetime, timezone
+from datetime import datetime
 from zoneinfo import ZoneInfo
 import json
 import os
@@ -23,7 +23,6 @@ with open("configuration.json", "r") as config:
 class Greetings(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
-		#self._last_member = None
 
 # Intents
 intents = discord.Intents.all()
@@ -72,14 +71,14 @@ async def unload(ctx):
         bot.unload_extension(f'Cogs.{extensions[x]}')
     print(f'{date}:DEBUG: {extensions} has been unloaded')
 
-@bot.command(hidden=True)
+@bot.command(hidden=True, aliases = ['r'])
 async def reload(ctx):
     date = datetime.now(ZoneInfo("America/Los_Angeles"))
     for x in range(0, len(extensions)):
         bot.reload_extension(f'Cogs.{extensions[x]}')
     print(f'{date}:DEBUG: {extensions} has been reloaded')
 
-@bot.command(hidden=True, aliases = ['l'])
+@bot.command(hidden=True)
 async def logout(ctx):
     date = datetime.now(ZoneInfo("America/Los_Angeles"))
     print(f'{date}:INFO: {bot.user} is logging out')
