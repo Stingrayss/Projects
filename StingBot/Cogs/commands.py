@@ -1,13 +1,12 @@
 from typing import OrderedDict
 import discord
-import random
 from datetime import datetime
 import time
 from zoneinfo import ZoneInfo
 import json
 from discord.ext import commands
 #only need for users command
-from collections import defaultdict
+#from collections import defaultdict
 
 def write_json(data):
     with open('data.json', 'w') as file:
