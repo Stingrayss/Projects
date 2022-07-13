@@ -16,10 +16,13 @@ class listeners(commands.Cog):
         with open('data.json', 'r') as file: 
             self.bot.data = json.load(file)
 
+    #checks servers status in the data and changes the file accordingly
     @commands.Cog.listener()
     async def on_guild_join(self, guild):
         data = self.bot.data
         
+        #checks if the server is a key in the data
+        #if so update the members data depending on if they exist in the data or not
         if str(guild.id) in data.keys():
             data = self.bot.data[str(guild.id)]
             for member in guild.members:
@@ -28,6 +31,7 @@ class listeners(commands.Cog):
                 else:
                     data[member.id] = {"server": guild.id, "name": member.display_name, "tracking": True, "inactive": 0, "messages": 0, "time": 0, "last_session": 0, "voice_join": 0, "voice_leave": 0}
                 write_json(data)
+        #server was not in the data so create it's data and add to the file
         else:
             server_list = defaultdict(dict)
             for member in guild.members:
