@@ -183,7 +183,7 @@ class Commands(commands.Cog):
         for member in serverdata:
             member = ctx.guild.get_member(int(member))
             
-            if member.name.lower() == user.lower() or member.display_name.lower() == user or str(member.id) == user:
+            if member.name.lower() == user.lower() or member.display_name.lower() == user.lower() or str(member.id) == user:
                 await ctx.send(f'{member.display_name} was last in call for {serverdata[str(member.id)]["last_session"]} minutes')
                 return
         
