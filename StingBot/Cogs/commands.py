@@ -8,6 +8,13 @@ from discord.ext import commands
 #only need for users command
 #from collections import defaultdict
 
+
+#there might be a way to replace this, but the one I used caused big bugs
+def read_json():
+    with open('data.json', 'r') as file: 
+        data = json.load(file)
+        return data
+
 def write_json(data):
     with open('data.json', 'w') as file:
         json.dump(data, file, indent = 4)
@@ -17,8 +24,6 @@ class Commands(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
-        with open('data.json', 'r') as file: 
-            self.bot.data = json.load(file)
 
     #This command gets changed to account for data updates
     #@commands.command(hidden=True)
@@ -31,82 +36,95 @@ class Commands(commands.Cog):
                 #user = {"server": guild.name, "name": member.display_name, "tracking": True, "inactive": 0, "messages": 0, "time": 0, "last_session": 0, "voice_join": 0, "voice_leave": 0}
                 #server_list[guild.id][member.id] = user
 
-        #out = open("data2.json", "w")
+        #out = open("data.json", "w")
         #json.dump(server_list, out, indent = 4)
         #out.close()
 
-        #writes the user display_name or their member.name if none
-
-        #for guild in self.bot.data:
-            #user_list = self.bot.data[guild]
-            #for key in user_list:
-                #user_list[key]['name'] = self.bot.get_guild(int(guild)).get_member(int(key)).display_name
-
-            #with open('data2.json', 'w') as data:
-                #json.dump(self.bot.data, data, indent = 4)
-
     #sends a leaderboard of the top 10 users for time spent in a server
     @commands.command(hidden=True, aliases = ['l'])
-    async def leaderboard(self, ctx):
-        topten = []
+    async def leaderboard(self, ctx, *, user=""):
+        userlist = []
         currenttime = round(time.time(), 3)
-        serverdata = self.bot.data[str(ctx.guild.id)]
+        #grabs the data and then hashes the guild id to grab that specific server data
+        serverdata = read_json()[str(ctx.guild.id)]
 
         #grabs all members currently in a channel for the server the command was sent in
         #then updates those member's time variable
         for channel in ctx.guild.voice_channels:
             for user in channel.members:
-                user_data = serverdata[str(user.id)]
-                user_data["time"] += ((currenttime - user_data["voice_join"]) / 60)
+                userdata = serverdata[str(user.id)]
+                userdata["time"] += ((currenttime - userdata["voice_join"]) / 60)
 
         #add 10 users from the server to a list
         #then sort and start comparing the last person in the list to the current person
         #replace if current > last
         for key in serverdata:
-            user = serverdata[key]
-            if len(topten) < 10:
-                tuple = user["name"], user["time"]
-                topten.append(tuple)
-            else:
-                topten.sort(key=lambda x : x[1], reverse = True)
-                if user["time"] > topten[-1][1]:
-                    tuple = user["name"], user["time"]
-                    topten[-1] = tuple
-
-        topten.sort(key=lambda x : x[1], reverse = True)
+            userdata = serverdata[key]
+            tuple = key, userdata["time"]
+            userlist.append(tuple)
+        
+        userlist.sort(key=lambda x : x[1], reverse = True)
+        
 
         #MAKE THIS LOOK PRETTY AT SOME POINT
         #sends an embedded message from stingbot listing the top 10 users
+        index = -1
+        if not user:
+            index = [x[0] for x in userlist].index(str(ctx.author.id))
+            rank = f'You are rank: {index + 1} / {len(userlist)} with {userlist[index][1]} minutes'
+        else: 
+            for member in serverdata:
+                member = ctx.guild.get_member(int(member))
+                print(member.name.lower())
+                print(member.display_name.lower())
+                print(member.name.lower() == user.lower())
+                print(member.display_name.lower() == user.lower())
+            
+                if member.name.lower() == user.lower() or member.display_name.lower() == user.lower() or str(member.id) == user:
+                    index = [x[0] for x in userlist].index(str(member.id))
+                    rank = f'{member.display_name} is rank: {index + 1} / {len(userlist)} with {userlist[index][1]} minutes'
+                    break
+            if index == -1:
+                await ctx.send(f'{user} does not exist, check your input name. **Options for input are:** `user nickname, user name, user id`')
+                return
+
         users = ''
-        for i in range (0, len(topten)): 
-            users += f'{i + 1}. {topten[i][0]}: {round(topten[i][1], 1) } minutes\n\n'
+        if len(userlist) > 10:
+            for i in range (0, 10): 
+                name = serverdata[userlist[i][0]]["name"]
+                users += f'{i + 1}. {name}: {round(userlist[i][1], 1)} minutes\n\n'
+        else: 
+            for i in range (0, len(userlist)):
+                name = serverdata[userlist[i][0]]["name"] 
+                users += f'{i + 1}. {name}: {round(userlist[i][1], 1)} minutes\n\n'
+
         embed = discord.Embed(title = 'Voice Leaderboard', color=discord.Colour.dark_blue())
-        embed.add_field(name = f'Top 10:', value=users)
+        embed.add_field(name = rank, value=users)
         await ctx.send(embed = embed)
 
     #sends a leaderboard of the top 10 users for messages sent in a server
     #code is same as the above leaderboard command
     @commands.command(hidden=True)
     async def messages(self, ctx):
-        topten = []
-        serverdata = self.bot.data[str(ctx.guild.id)]
+        userlist = []
+        serverdata = read_json()[str(ctx.guild.id)]
 
         for key in serverdata:
             user = serverdata[key]
-            if len(topten) < 10:
-                tuple = user["name"], user["messages"]
-                topten.append(tuple)
-            else:
-                topten.sort(key=lambda x : x[1], reverse = True)
-                if user["messages"] > topten[-1][1]:
-                    tuple = user["name"], user["messages"]
-                    topten[-1] = tuple
+            tuple = user["name"], user["messages"]
+            userlist.append(tuple)
+        
+        userlist.sort(key=lambda x : x[1], reverse = True)
 
-        topten.sort(key=lambda x : x[1], reverse = True)
+        userlist.sort(key=lambda x : x[1], reverse = True)
 
         users = ''
-        for i in range (0, len(topten)): 
-            users += f'{i + 1}. {topten[i][0]}: {round(topten[i][1], 1) } messages\n\n'
+        if len(userlist) > 10:
+            for i in range (0, 10): 
+                users += f'{i + 1}. {userlist[i][0]}: {userlist[i][1]} messages\n\n'
+        else: 
+            for i in range (0, len(userlist)): 
+                users += f'{i + 1}. {userlist[i][0]}: {userlist[i][1]} messages\n\n'
         embed = discord.Embed(title = 'Message Leaderboard', color=discord.Colour.dark_blue())
         embed.add_field(name = f'Top 10:', value=users)
         await ctx.send(embed = embed)
@@ -115,7 +133,7 @@ class Commands(commands.Cog):
     @commands.command(aliases = ['s'])
     async def session(self, ctx, *, user=""):
         currenttime = round(time.time(), 3)
-        serverdata = self.bot.data[str(ctx.guild.id)]
+        serverdata = read_json()[str(ctx.guild.id)]
 
         #checks if there was no user parameter
         #if not it assumes the message author and checks if they are in a call
@@ -161,7 +179,7 @@ class Commands(commands.Cog):
     #same as the above session command but doesn't check if a user is in call
     @commands.command(aliases = ['ls'])
     async def lastsession(self, ctx, *, user=""):
-        serverdata = self.bot.data[str(ctx.guild.id)]
+        serverdata = read_json()[str(ctx.guild.id)]
 
         if not user:
             await ctx.send(f'You were last in call for {serverdata[str(ctx.author.id)]["last_session"]} minutes')
@@ -202,10 +220,11 @@ class Commands(commands.Cog):
     async def data(self, ctx):
         date = datetime.now(ZoneInfo("America/Los_Angeles"))
         if(ctx.author.id == 105032801715290112):
+            data = read_json()
             #not sure how this orders the data, but it does something
-            self.bot.data = OrderedDict(sorted(self.bot.data.items(), key=lambda k: k[0][2], reverse=True))
+            data = OrderedDict(sorted(data.items(), key=lambda k: k[0][2], reverse=True))
 
-            write_json(self.bot.data)
+            write_json(data)
             
             await self.bot.get_channel(734204331552669738).send(file=discord.File(r'./data.json'))
             print(f'{date}:INFO: {ctx.author} retrieved user data')
