@@ -51,8 +51,8 @@ class Commands(commands.Cog):
         #grabs all members currently in a channel for the server the command was sent in
         #then updates those member's time variable
         for channel in ctx.guild.voice_channels:
-            for user in channel.members:
-                userdata = serverdata[str(user.id)]
+            for member in channel.members:
+                userdata = serverdata[str(member.id)]
                 userdata["time"] += ((currenttime - userdata["voice_join"]) / 60)
 
         #add 10 users from the server to a list
@@ -75,10 +75,6 @@ class Commands(commands.Cog):
         else: 
             for member in serverdata:
                 member = ctx.guild.get_member(int(member))
-                print(member.name.lower())
-                print(member.display_name.lower())
-                print(member.name.lower() == user.lower())
-                print(member.display_name.lower() == user.lower())
             
                 if member.name.lower() == user.lower() or member.display_name.lower() == user.lower() or str(member.id) == user:
                     index = [x[0] for x in userlist].index(str(member.id))
