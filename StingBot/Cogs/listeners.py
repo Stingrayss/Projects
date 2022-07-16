@@ -89,23 +89,37 @@ class listeners(commands.Cog):
         user = data[str(member.guild.id)][str(member.id)]
         date = datetime.now(ZoneInfo("America/Los_Angeles"))
         currenttime = round(time.time(), 3)
-        #checks to see if a user just joined a voice call
-        #set the voice_join variable to the current time if they did
-        if(VoiceStateBefore.channel == None and VoiceStateAfter.channel != None):
-            user['voice_join'] = currenttime
 
-            print(f'{date}:INFO: {member.name} has joined {VoiceStateAfter.channel}')
-        
-        #checks to see if the user has left a channel
-        #calculates and updates the time spent in a voice channel if they did
-        elif(VoiceStateBefore.channel != None and VoiceStateAfter.channel == None):
+        def update_time():
             user['voice_leave'] = currenttime
             #inserts the length of the session
             user['last_session'] = round((currenttime - user['voice_join']) / 60, 3)
             #updates the total time spent in a voice channel
             user['time'] += round((currenttime - user['voice_join']) / 60, 3)
 
+        #checks to see if a user just joined a voice call
+        #set the voice_join variable to the current time if they did
+        if(VoiceStateBefore.channel == None and VoiceStateAfter.channel != None 
+            or VoiceStateBefore.afk and VoiceStateAfter.channel != None):
+            user['voice_join'] = currenttime
+
+            print(f'{date}:INFO: {member.name} has joined {VoiceStateAfter.channel}')
+
+        #checks to see if the user has gone afk
+        #calculates and updates the time spent in a voice channel if they did
+        elif(VoiceStateBefore.channel != None and VoiceStateAfter.channel != None and VoiceStateAfter.afk):
+            update_time()
+
+            print(f'{date}:INFO: {member.name} has gone afk')
+        
+        #checks to see if the user has left a channel
+        #also updates time
+        elif(VoiceStateBefore.channel != None and VoiceStateAfter.channel == None and not VoiceStateBefore.afk):
+            if not VoiceStateAfter.afk:
+                update_time()
+
             print(f'{date}:INFO: {member.name} has left {VoiceStateBefore.channel}')
+
 
         write_json(data)
 
