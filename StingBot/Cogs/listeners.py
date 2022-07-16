@@ -88,14 +88,15 @@ class listeners(commands.Cog):
         data = read_json()
         user = data[str(member.guild.id)][str(member.id)]
         date = datetime.now(ZoneInfo("America/Los_Angeles"))
-        currenttime = round(time.time(), 3)
+        currenttime = round(time.time(), 2)
 
+        #function to update a user's time variable in the data
         def update_time():
             user['voice_leave'] = currenttime
             #inserts the length of the session
-            user['last_session'] = round((currenttime - user['voice_join']) / 60, 3)
+            user['last_session'] = round((currenttime - user['voice_join']) / 60, 2)
             #updates the total time spent in a voice channel
-            user['time'] += round((currenttime - user['voice_join']) / 60, 3)
+            user['time'] += round((currenttime - user['voice_join']) / 60, 2)
 
         #checks to see if a user just joined a voice call
         #set the voice_join variable to the current time if they did
@@ -114,12 +115,11 @@ class listeners(commands.Cog):
         
         #checks to see if the user has left a channel
         #also updates time
-        elif(VoiceStateBefore.channel != None and VoiceStateAfter.channel == None and not VoiceStateBefore.afk):
+        elif(VoiceStateBefore.channel != None and VoiceStateAfter.channel == None):
             if not VoiceStateAfter.afk:
                 update_time()
 
             print(f'{date}:INFO: {member.name} has left {VoiceStateBefore.channel}')
-
 
         write_json(data)
 
