@@ -51,7 +51,7 @@ class listeners(commands.Cog):
         serverdata = data[str(guild.id)]
         for member in guild.members:
             serverdata[str(member.id)]['tracking'] = False
-            write_json(serverdata)
+            write_json(data)
 
     #sets a user's tracking variable to false upon member removal from guild
     @commands.Cog.listener()
@@ -59,7 +59,7 @@ class listeners(commands.Cog):
         data = read_json()
         serverdata = data[str(member.guild.id)]  
         serverdata[str(member.id)]['tracking'] = False
-        write_json(serverdata)
+        write_json(data)
         date = datetime.now(ZoneInfo("America/Los_Angeles"))
         print(f'{date}:INFO: {member.name} has been removed from: {member.guild}')
     

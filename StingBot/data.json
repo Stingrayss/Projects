@@ -5,21 +5,21 @@
             "name": "Cade",
             "tracking": true,
             "inactive": 0,
-            "messages": 72,
-            "time": 741.1420000000003,
-            "last_session": 0.22,
-            "voice_join": 1657959491.38,
-            "voice_leave": 1657959504.82
+            "messages": 8,
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
         },
         "543329883732836359": {
             "server": "Stingray",
             "name": "StingBot",
             "tracking": true,
             "inactive": 0,
-            "messages": 35,
-            "time": 427,
+            "messages": 6,
+            "time": 0,
             "last_session": 0,
-            "voice_join": 27,
+            "voice_join": 0,
             "voice_leave": 0
         },
         "721305814010429522": {
@@ -28,145 +28,13 @@
             "tracking": true,
             "inactive": 0,
             "messages": 0,
-            "time": 227,
+            "time": 0,
             "last_session": 0,
-            "voice_join": 22,
+            "voice_join": 0,
             "voice_leave": 0
         }
     },
     "528437158097190923": {
-        "678828512144261123": {
-            "server": "Coffee Shop",
-            "name": "toya",
-            "tracking": true,
-            "inactive": 0,
-            "messages": 0,
-            "time": 66.632,
-            "last_session": 48.204,
-            "voice_join": 1657951816.587,
-            "voice_leave": 1657954708.82
-        },
-        "641793959118766091": {
-            "server": "Coffee Shop",
-            "name": "Sutida",
-            "tracking": true,
-            "inactive": 0,
-            "messages": 0,
-            "time": 0,
-            "last_session": 0,
-            "voice_join": 1657954135.735,
-            "voice_leave": 0
-        },
-        "556340444901015585": {
-            "server": "Coffee Shop",
-            "name": "wyatt",
-            "tracking": true,
-            "inactive": 0,
-            "messages": 0,
-            "time": 0,
-            "last_session": 0,
-            "voice_join": 0,
-            "voice_leave": 0
-        },
-        "442787849448849418": {
-            "server": "Coffee Shop",
-            "name": "Despearious",
-            "tracking": true,
-            "inactive": 0,
-            "messages": 0,
-            "time": 0,
-            "last_session": 0,
-            "voice_join": 0,
-            "voice_leave": 0
-        },
-        "404785377245790211": {
-            "server": "Coffee Shop",
-            "name": "mehsachi",
-            "tracking": true,
-            "inactive": 0,
-            "messages": 0,
-            "time": 0,
-            "last_session": 0,
-            "voice_join": 0,
-            "voice_leave": 0
-        },
-        "325192574602051584": {
-            "server": "Coffee Shop",
-            "name": "Zentra",
-            "tracking": true,
-            "inactive": 0,
-            "messages": 0,
-            "time": 0,
-            "last_session": 0,
-            "voice_join": 0,
-            "voice_leave": 0
-        },
-        "282859044593598464": {
-            "server": "Coffee Shop",
-            "name": "CoffeeBot",
-            "tracking": true,
-            "inactive": 0,
-            "messages": 0,
-            "time": 0,
-            "last_session": 0,
-            "voice_join": 0,
-            "voice_leave": 0
-        },
-        "231196239339716608": {
-            "server": "Coffee Shop",
-            "name": "Bennyluwho",
-            "tracking": true,
-            "inactive": 0,
-            "messages": 1,
-            "time": 0,
-            "last_session": 0,
-            "voice_join": 0,
-            "voice_leave": 0
-        },
-        "190276602200850435": {
-            "server": "Coffee Shop",
-            "name": "LogDog",
-            "tracking": true,
-            "inactive": 0,
-            "messages": 0,
-            "time": 463.39300000000003,
-            "last_session": 211.52,
-            "voice_join": 1657944394.913,
-            "voice_leave": 1657957086.117
-        },
-        "186896031739281409": {
-            "server": "Coffee Shop",
-            "name": "ray",
-            "tracking": true,
-            "inactive": 0,
-            "messages": 1,
-            "time": 2.009,
-            "last_session": 2.009,
-            "voice_join": 1657949650.038,
-            "voice_leave": 1657949770.551
-        },
-        "177545683178487808": {
-            "server": "Coffee Shop",
-            "name": "zeke",
-            "tracking": true,
-            "inactive": 0,
-            "messages": 7,
-            "time": 160.563,
-            "last_session": 160.563,
-            "voice_join": 1657944123.343,
-            "voice_leave": 1657888991.945
-        },
-        "97207894285492224": {
-            "server": "Coffee Shop",
-            "name": "Khai",
-            "tracking": true,
-            "inactive": 0,
-            "messages": 0,
-            "time": 0,
-            "last_session": 0,
-            "voice_join": 0,
-            "voice_leave": 0
-        },
         "297073686916366336": {
             "server": "Coffee Shop",
             "name": "CoffeeBot 4",
@@ -181,6 +49,17 @@
         "642932582996246547": {
             "server": "Coffee Shop",
             "name": "Yookie",
+            "tracking": true,
+            "inactive": 0,
+            "messages": 0,
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
+        },
+        "325192574602051584": {
+            "server": "Coffee Shop",
+            "name": "Zentra",
             "tracking": true,
             "inactive": 0,
             "messages": 0,
@@ -266,16 +145,27 @@
             "voice_join": 0,
             "voice_leave": 0
         },
+        "190276602200850435": {
+            "server": "Coffee Shop",
+            "name": "LogDog",
+            "tracking": true,
+            "inactive": 0,
+            "messages": 0,
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
+        },
         "319123953778163712": {
             "server": "Coffee Shop",
             "name": "Cryptic",
             "tracking": true,
             "inactive": 0,
             "messages": 0,
-            "time": 202.08,
-            "last_session": 202.08,
-            "voice_join": 1657879406.882,
-            "voice_leave": 1657891531.686
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
         },
         "135529592864768001": {
             "server": "Coffee Shop",
@@ -338,10 +228,10 @@
             "tracking": true,
             "inactive": 0,
             "messages": 0,
-            "time": 411.74699999999996,
-            "last_session": 219.98,
-            "voice_join": 1657954147.113,
-            "voice_leave": 1657954145.154
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
         },
         "474074437176786955": {
             "server": "Coffee Shop",
@@ -409,6 +299,17 @@
             "voice_join": 0,
             "voice_leave": 0
         },
+        "442787849448849418": {
+            "server": "Coffee Shop",
+            "name": "Despearious",
+            "tracking": true,
+            "inactive": 0,
+            "messages": 0,
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
+        },
         "191754024402288641": {
             "server": "Coffee Shop",
             "name": "THE BIODADDY",
@@ -439,7 +340,7 @@
             "messages": 0,
             "time": 0,
             "last_session": 0,
-            "voice_join": 1657958739.565,
+            "voice_join": 0,
             "voice_leave": 0
         },
         "92021826464526336": {
@@ -596,12 +497,23 @@
             "voice_join": 0,
             "voice_leave": 0
         },
+        "556340444901015585": {
+            "server": "Coffee Shop",
+            "name": "wyatt",
+            "tracking": true,
+            "inactive": 0,
+            "messages": 0,
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
+        },
         "543329883732836359": {
             "server": "Coffee Shop",
             "name": "StingBot",
             "tracking": true,
             "inactive": 0,
-            "messages": 11,
+            "messages": 0,
             "time": 0,
             "last_session": 0,
             "voice_join": 0,
@@ -612,11 +524,11 @@
             "name": "Cade",
             "tracking": true,
             "inactive": 0,
-            "messages": 20,
-            "time": 218.762,
-            "last_session": 218.762,
-            "voice_join": 1657879349.466,
-            "voice_leave": 1657892475.214
+            "messages": 0,
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
         },
         "172002275412279296": {
             "server": "Coffee Shop",
@@ -654,6 +566,17 @@
         "249621567032655872": {
             "server": "Coffee Shop",
             "name": "Bambi",
+            "tracking": true,
+            "inactive": 0,
+            "messages": 0,
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
+        },
+        "404785377245790211": {
+            "server": "Coffee Shop",
+            "name": "mehsachi",
             "tracking": true,
             "inactive": 0,
             "messages": 0,
@@ -706,6 +629,17 @@
             "voice_join": 0,
             "voice_leave": 0
         },
+        "641793959118766091": {
+            "server": "Coffee Shop",
+            "name": "Sutida",
+            "tracking": true,
+            "inactive": 0,
+            "messages": 0,
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
+        },
         "712586188204015657": {
             "server": "Coffee Shop",
             "name": "Dough",
@@ -733,11 +667,11 @@
             "name": "Dillan",
             "tracking": true,
             "inactive": 0,
-            "messages": 4,
-            "time": 63.818000000000005,
-            "last_session": 11.661,
-            "voice_join": 1657951391.389,
-            "voice_leave": 1657951320.88
+            "messages": 0,
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
         },
         "282598484589281282": {
             "server": "Coffee Shop",
@@ -767,14 +701,25 @@
             "tracking": true,
             "inactive": 0,
             "messages": 0,
-            "time": 64.51400000000001,
-            "last_session": 22.155,
-            "voice_join": 1657955558.427,
-            "voice_leave": 1657883310.775
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
         },
         "240830348970164225": {
             "server": "Coffee Shop",
             "name": "Austin\ud83e\udd76",
+            "tracking": true,
+            "inactive": 0,
+            "messages": 0,
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
+        },
+        "231196239339716608": {
+            "server": "Coffee Shop",
+            "name": "Bennyluwho",
             "tracking": true,
             "inactive": 0,
             "messages": 0,
@@ -797,6 +742,28 @@
         "141051113120989185": {
             "server": "Coffee Shop",
             "name": "CholoRolo",
+            "tracking": true,
+            "inactive": 0,
+            "messages": 0,
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
+        },
+        "186896031739281409": {
+            "server": "Coffee Shop",
+            "name": "ray",
+            "tracking": true,
+            "inactive": 0,
+            "messages": 0,
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
+        },
+        "678828512144261123": {
+            "server": "Coffee Shop",
+            "name": "toya",
             "tracking": true,
             "inactive": 0,
             "messages": 0,
@@ -868,7 +835,7 @@
             "messages": 0,
             "time": 0,
             "last_session": 0,
-            "voice_join": 1657955306.557,
+            "voice_join": 0,
             "voice_leave": 0
         },
         "656157857267449867": {
@@ -885,6 +852,17 @@
         "112047180948176896": {
             "server": "Coffee Shop",
             "name": "-Fabriz",
+            "tracking": true,
+            "inactive": 0,
+            "messages": 0,
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
+        },
+        "97207894285492224": {
+            "server": "Coffee Shop",
+            "name": "Khai",
             "tracking": true,
             "inactive": 0,
             "messages": 0,
@@ -915,9 +893,31 @@
             "voice_join": 0,
             "voice_leave": 0
         },
+        "282859044593598464": {
+            "server": "Coffee Shop",
+            "name": "CoffeeBot",
+            "tracking": true,
+            "inactive": 0,
+            "messages": 0,
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
+        },
         "695163457091272745": {
             "server": "Coffee Shop",
             "name": "megan",
+            "tracking": true,
+            "inactive": 0,
+            "messages": 0,
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
+        },
+        "177545683178487808": {
+            "server": "Coffee Shop",
+            "name": "zeke",
             "tracking": true,
             "inactive": 0,
             "messages": 0,
@@ -934,7 +934,7 @@
             "messages": 0,
             "time": 0,
             "last_session": 0,
-            "voice_join": 1657955026.27,
+            "voice_join": 0,
             "voice_leave": 0
         },
         "500889130998300674": {
@@ -1002,6 +1002,17 @@
             "last_session": 0,
             "voice_join": 0,
             "voice_leave": 0
+        },
+        "371466383650717697": {
+            "server": "Coffee Shop",
+            "name": "jersey",
+            "tracking": true,
+            "inactive": 0,
+            "messages": 0,
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
         }
     },
     "975633983314489394": {
@@ -1010,8 +1021,8 @@
             "name": "Cade",
             "tracking": true,
             "inactive": 0,
-            "messages": 2,
-            "time": 0,
+            "messages": 0,
+            "time": 157.2,
             "last_session": 0,
             "voice_join": 0,
             "voice_leave": 0
@@ -1021,8 +1032,8 @@
             "name": "Loggy",
             "tracking": true,
             "inactive": 0,
-            "messages": 3,
-            "time": 0,
+            "messages": 2,
+            "time": 330.2,
             "last_session": 0,
             "voice_join": 0,
             "voice_leave": 0
@@ -1054,8 +1065,8 @@
             "name": "Kylie",
             "tracking": true,
             "inactive": 0,
-            "messages": 2,
-            "time": 0,
+            "messages": 0,
+            "time": 447.8,
             "last_session": 0,
             "voice_join": 0,
             "voice_leave": 0
@@ -1073,17 +1084,6 @@
         }
     },
     "293892346293256193": {
-        "105032801715290112": {
-            "server": "Emporium",
-            "name": "Cade",
-            "tracking": true,
-            "inactive": 0,
-            "messages": 2,
-            "time": 0,
-            "last_session": 0,
-            "voice_join": 0,
-            "voice_leave": 0
-        },
         "119520560370679808": {
             "server": "Emporium",
             "name": "Beau",
@@ -1095,9 +1095,9 @@
             "voice_join": 0,
             "voice_leave": 0
         },
-        "140529519776890881": {
+        "689177590220718086": {
             "server": "Emporium",
-            "name": "Cone",
+            "name": "mithrandir",
             "tracking": true,
             "inactive": 0,
             "messages": 0,
@@ -1111,37 +1111,15 @@
             "name": "kris chan",
             "tracking": true,
             "inactive": 0,
-            "messages": 5,
-            "time": 184.114,
-            "last_session": 66.402,
-            "voice_join": 1657921841.467,
-            "voice_leave": 1657925825.592
+            "messages": 14,
+            "time": 1713.66,
+            "last_session": 281.47,
+            "voice_join": 1658383145.99,
+            "voice_leave": 1658400034.07
         },
-        "162415488775880704": {
+        "467462327231578113": {
             "server": "Emporium",
-            "name": "likes choccy milf",
-            "tracking": true,
-            "inactive": 0,
-            "messages": 0,
-            "time": 0,
-            "last_session": 0,
-            "voice_join": 0,
-            "voice_leave": 0
-        },
-        "184405311681986560": {
-            "server": "Emporium",
-            "name": "Skeet",
-            "tracking": true,
-            "inactive": 0,
-            "messages": 0,
-            "time": 0,
-            "last_session": 0,
-            "voice_join": 0,
-            "voice_leave": 0
-        },
-        "212449249718173696": {
-            "server": "Emporium",
-            "name": "Joy Boy",
+            "name": "kriiiiis jr.",
             "tracking": true,
             "inactive": 0,
             "messages": 0,
@@ -1161,71 +1139,27 @@
             "voice_join": 0,
             "voice_leave": 0
         },
-        "264510073806651402": {
-            "server": "Emporium",
-            "name": "Squidward",
-            "tracking": true,
-            "inactive": 0,
-            "messages": 0,
-            "time": 0,
-            "last_session": 0,
-            "voice_join": 0,
-            "voice_leave": 0
-        },
-        "282859044593598464": {
-            "server": "Emporium",
-            "name": "ProBot \u2728",
-            "tracking": true,
-            "inactive": 0,
-            "messages": 0,
-            "time": 0,
-            "last_session": 0,
-            "voice_join": 0,
-            "voice_leave": 0
-        },
         "286627415449403393": {
             "server": "Emporium",
             "name": "Cannot Sleep",
             "tracking": true,
             "inactive": 0,
-            "messages": 0,
-            "time": 170.353,
-            "last_session": 66.154,
-            "voice_join": 1657924347.7,
-            "voice_leave": 1657928316.918
-        },
-        "293892998880690177": {
-            "server": "Emporium",
-            "name": "Soy Boy",
-            "tracking": true,
-            "inactive": 0,
-            "messages": 0,
-            "time": 192.593,
-            "last_session": 10.257,
-            "voice_join": 1657927735.521,
-            "voice_leave": 1657928350.952
+            "messages": 15,
+            "time": 594.22,
+            "last_session": 122.65,
+            "voice_join": 1658293556.74,
+            "voice_leave": 1658300915.83
         },
         "296444821189558273": {
             "server": "Emporium",
             "name": "Guy",
             "tracking": true,
             "inactive": 0,
-            "messages": 0,
-            "time": 225.63299999999998,
-            "last_session": 108.344,
-            "voice_join": 1657921820.874,
-            "voice_leave": 1657928321.503
-        },
-        "312711691940921345": {
-            "server": "Emporium",
-            "name": "Business Geese",
-            "tracking": true,
-            "inactive": 0,
-            "messages": 1,
-            "time": 248.608,
-            "last_session": 47.347,
-            "voice_join": 1657925482.234,
-            "voice_leave": 1657928323.049
+            "messages": 10,
+            "time": 1634.7800000000002,
+            "last_session": 237.36,
+            "voice_join": 1658385789.47,
+            "voice_leave": 1658400031.05
         },
         "316446490530807808": {
             "server": "Emporium",
@@ -1238,20 +1172,31 @@
             "voice_join": 0,
             "voice_leave": 0
         },
+        "105032801715290112": {
+            "server": "Emporium",
+            "name": "Cade",
+            "tracking": true,
+            "inactive": 0,
+            "messages": 20,
+            "time": 195.67000000000002,
+            "last_session": 96.56,
+            "voice_join": 1658394231.36,
+            "voice_leave": 1658400025.18
+        },
         "375805687529209857": {
             "server": "Emporium",
             "name": "Boris",
             "tracking": true,
             "inactive": 0,
-            "messages": 0,
+            "messages": 2,
             "time": 0,
             "last_session": 0,
             "voice_join": 0,
             "voice_leave": 0
         },
-        "467462327231578113": {
+        "184405311681986560": {
             "server": "Emporium",
-            "name": "kriiiiis jr.",
+            "name": "Skeet",
             "tracking": true,
             "inactive": 0,
             "messages": 0,
@@ -1260,16 +1205,16 @@
             "voice_join": 0,
             "voice_leave": 0
         },
-        "543329883732836359": {
+        "264510073806651402": {
             "server": "Emporium",
-            "name": "StingBot",
+            "name": "Squidward",
             "tracking": true,
             "inactive": 0,
-            "messages": 0,
-            "time": 0,
-            "last_session": 0,
-            "voice_join": 0,
-            "voice_leave": 0
+            "messages": 6,
+            "time": 1168.6899999999998,
+            "last_session": 232.99,
+            "voice_join": 1658291599.79,
+            "voice_leave": 1658305579.27
         },
         "544640159665225731": {
             "server": "Emporium",
@@ -1282,9 +1227,86 @@
             "voice_join": 0,
             "voice_leave": 0
         },
-        "689177590220718086": {
+        "293892998880690177": {
             "server": "Emporium",
-            "name": "mithrandir",
+            "name": "Soy Boy",
+            "tracking": true,
+            "inactive": 0,
+            "messages": 11,
+            "time": 1224.92,
+            "last_session": 123.83,
+            "voice_join": 1658291161.63,
+            "voice_leave": 1658298591.68
+        },
+        "543329883732836359": {
+            "server": "Emporium",
+            "name": "StingBot",
+            "tracking": true,
+            "inactive": 0,
+            "messages": 4,
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
+        },
+        "162415488775880704": {
+            "server": "Emporium",
+            "name": "likes choccy milf",
+            "tracking": true,
+            "inactive": 0,
+            "messages": 0,
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
+        },
+        "212449249718173696": {
+            "server": "Emporium",
+            "name": "Joy Boy",
+            "tracking": true,
+            "inactive": 0,
+            "messages": 1,
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
+        },
+        "282859044593598464": {
+            "server": "Emporium",
+            "name": "ProBot \u2728",
+            "tracking": true,
+            "inactive": 0,
+            "messages": 5,
+            "time": 104.81,
+            "last_session": 102.7,
+            "voice_join": 1658203120.78,
+            "voice_leave": 1658209282.76
+        },
+        "312711691940921345": {
+            "server": "Emporium",
+            "name": "Business Geese",
+            "tracking": true,
+            "inactive": 0,
+            "messages": 28,
+            "time": 629.79,
+            "last_session": 105.61,
+            "voice_join": 1658198656.23,
+            "voice_leave": 1658204992.82
+        },
+        "162411053597196288": {
+            "server": "Emporium",
+            "name": "A2AxPhoenix",
+            "tracking": false,
+            "inactive": 0,
+            "messages": 0,
+            "time": 237.08,
+            "last_session": 237.08,
+            "voice_join": 1658385807.01,
+            "voice_leave": 1658400031.88
+        },
+        "140529519776890881": {
+            "server": "Emporium",
+            "name": "Cone",
             "tracking": true,
             "inactive": 0,
             "messages": 0,
@@ -1300,7 +1322,7 @@
             "name": "Cade",
             "tracking": true,
             "inactive": 0,
-            "messages": 1,
+            "messages": 0,
             "time": 0,
             "last_session": 0,
             "voice_join": 0,
@@ -1311,11 +1333,11 @@
             "name": "-Fabriz",
             "tracking": true,
             "inactive": 0,
-            "messages": 27,
-            "time": 17.203,
-            "last_session": 17.203,
-            "voice_join": 1657957538.877,
-            "voice_leave": 1657958571.04
+            "messages": 0,
+            "time": 0,
+            "last_session": 0,
+            "voice_join": 0,
+            "voice_leave": 0
         },
         "135529592864768001": {
             "server": "Sanctuary",
@@ -1325,7 +1347,7 @@
             "messages": 0,
             "time": 0,
             "last_session": 0,
-            "voice_join": 1657953432.984,
+            "voice_join": 0,
             "voice_leave": 0
         },
         "178541277938319361": {
@@ -1333,10 +1355,10 @@
             "name": "Minions: The Rise of Gru",
             "tracking": true,
             "inactive": 0,
-            "messages": 13,
+            "messages": 0,
             "time": 0,
             "last_session": 0,
-            "voice_join": 1657953406.094,
+            "voice_join": 0,
             "voice_leave": 0
         },
         "219186151741718528": {
@@ -1344,7 +1366,7 @@
             "name": "Shao",
             "tracking": true,
             "inactive": 0,
-            "messages": 6,
+            "messages": 0,
             "time": 0,
             "last_session": 0,
             "voice_join": 0,
