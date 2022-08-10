@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 from datetime import datetime
-from zoneinfo import ZoneInfo
+from backports.zoneinfo import ZoneInfo
 import json
 import os
 import logging

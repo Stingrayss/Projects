@@ -1,6 +1,6 @@
 import json
 from datetime import datetime
-from zoneinfo import ZoneInfo
+from backports.zoneinfo import ZoneInfo
 import time
 from discord.ext import commands
 from collections import defaultdict
@@ -51,7 +51,7 @@ class listeners(commands.Cog):
         serverdata = data[str(guild.id)]
         for member in guild.members:
             serverdata[str(member.id)]['tracking'] = False
-            write_json(serverdata)
+            write_json(data)
 
     #sets a user's tracking variable to false upon member removal from guild
     @commands.Cog.listener()
@@ -59,7 +59,7 @@ class listeners(commands.Cog):
         data = read_json()
         serverdata = data[str(member.guild.id)]  
         serverdata[str(member.id)]['tracking'] = False
-        write_json(serverdata)
+        write_json(data)
         date = datetime.now(ZoneInfo("America/Los_Angeles"))
         print(f'{date}:INFO: {member.name} has been removed from: {member.guild}')
     
@@ -88,22 +88,36 @@ class listeners(commands.Cog):
         data = read_json()
         user = data[str(member.guild.id)][str(member.id)]
         date = datetime.now(ZoneInfo("America/Los_Angeles"))
-        currenttime = round(time.time(), 3)
+        currenttime = round(time.time(), 2)
+
+        #function to update a user's time variable in the data
+        def update_time():
+            user['voice_leave'] = currenttime
+            #inserts the length of the session
+            user['last_session'] = round((currenttime - user['voice_join']) / 60, 2)
+            #updates the total time spent in a voice channel
+            user['time'] += round((currenttime - user['voice_join']) / 60, 2)
+
         #checks to see if a user just joined a voice call
         #set the voice_join variable to the current time if they did
-        if(VoiceStateBefore.channel == None and VoiceStateAfter.channel != None):
+        if(VoiceStateBefore.channel == None and VoiceStateAfter.channel != None 
+            or VoiceStateBefore.afk and VoiceStateAfter.channel != None):
             user['voice_join'] = currenttime
 
             print(f'{date}:INFO: {member.name} has joined {VoiceStateAfter.channel}')
+
+        #checks to see if the user has gone afk
+        #calculates and updates the time spent in a voice channel if they did
+        elif(VoiceStateBefore.channel != None and VoiceStateAfter.channel != None and VoiceStateAfter.afk):
+            update_time()
+
+            print(f'{date}:INFO: {member.name} has gone afk')
         
         #checks to see if the user has left a channel
-        #calculates and updates the time spent in a voice channel if they did
+        #also updates time
         elif(VoiceStateBefore.channel != None and VoiceStateAfter.channel == None):
-            user['voice_leave'] = currenttime
-            #inserts the length of the session
-            user['last_session'] = round((currenttime - user['voice_join']) / 60, 3)
-            #updates the total time spent in a voice channel
-            user['time'] += round((currenttime - user['voice_join']) / 60, 3)
+            if not VoiceStateBefore.afk:
+                update_time()
 
             print(f'{date}:INFO: {member.name} has left {VoiceStateBefore.channel}')
 

@@ -1,8 +1,9 @@
+from ast import alias
 from typing import OrderedDict
 import discord
 from datetime import datetime
 import time
-from zoneinfo import ZoneInfo
+from backports.zoneinfo import ZoneInfo
 import json
 from discord.ext import commands
 #only need for users command
@@ -44,16 +45,17 @@ class Commands(commands.Cog):
     @commands.command(hidden=True, aliases = ['l'])
     async def leaderboard(self, ctx, *, user=""):
         userlist = []
-        currenttime = round(time.time(), 3)
+        currenttime = round(time.time(), 2)
         #grabs the data and then hashes the guild id to grab that specific server data
         serverdata = read_json()[str(ctx.guild.id)]
 
         #grabs all members currently in a channel for the server the command was sent in
         #then updates those member's time variable
         for channel in ctx.guild.voice_channels:
-            for member in channel.members:
-                userdata = serverdata[str(member.id)]
-                userdata["time"] += ((currenttime - userdata["voice_join"]) / 60)
+            if channel != ctx.guild.afk_channel:
+                for member in channel.members:
+                    userdata = serverdata[str(member.id)]
+                    userdata["time"] += ((currenttime - userdata["voice_join"]) / 60)
 
         #add 10 users from the server to a list
         #then sort and start comparing the last person in the list to the current person
@@ -71,14 +73,14 @@ class Commands(commands.Cog):
         index = -1
         if not user:
             index = [x[0] for x in userlist].index(str(ctx.author.id))
-            rank = f'You are rank: {index + 1} / {len(userlist)} with {userlist[index][1]} minutes'
+            rank = f'You are rank: {index + 1} / {len(userlist)} with {round(userlist[index][1], 1)} minutes'
         else: 
             for member in serverdata:
                 member = ctx.guild.get_member(int(member))
             
                 if member.name.lower() == user.lower() or member.display_name.lower() == user.lower() or str(member.id) == user:
                     index = [x[0] for x in userlist].index(str(member.id))
-                    rank = f'{member.display_name} is rank: {index + 1} / {len(userlist)} with {userlist[index][1]} minutes'
+                    rank = f'{member.display_name} is rank: {index + 1} / {len(userlist)} with {round(userlist[index][1], 1)} minutes'
                     break
             if index == -1:
                 await ctx.send(f'{user} does not exist, check your input name. **Options for input are:** `user nickname, user name, user id`')
@@ -128,7 +130,7 @@ class Commands(commands.Cog):
     #sends a message with the specified user's current time spent in call
     @commands.command(aliases = ['s'])
     async def session(self, ctx, *, user=""):
-        currenttime = round(time.time(), 3)
+        currenttime = round(time.time(), 2)
         serverdata = read_json()[str(ctx.guild.id)]
 
         #checks if there was no user parameter
@@ -178,7 +180,7 @@ class Commands(commands.Cog):
         serverdata = read_json()[str(ctx.guild.id)]
 
         if not user:
-            await ctx.send(f'You were last in call for {serverdata[str(ctx.author.id)]["last_session"]} minutes')
+            await ctx.send(f'You were last in call for {round(serverdata[str(ctx.author.id)]["last_session"], 2)} minutes')
             return
 
         members_names = []
@@ -198,7 +200,7 @@ class Commands(commands.Cog):
             member = ctx.guild.get_member(int(member))
             
             if member.name.lower() == user.lower() or member.display_name.lower() == user.lower() or str(member.id) == user:
-                await ctx.send(f'{member.display_name} was last in call for {serverdata[str(member.id)]["last_session"]} minutes')
+                await ctx.send(f'{member.display_name} was last in call for {round(serverdata[str(member.id)]["last_session"], 2)} minutes')
                 return
         
         await ctx.send(f'{user} does not exist in this guild')
@@ -226,5 +228,15 @@ class Commands(commands.Cog):
             print(f'{date}:INFO: {ctx.author} retrieved user data')
         else: print(f'{date}:WARNING: {ctx.author} attempted to retrieve user data')
 
+    #Sends a message letting me know how much time is left before the last day of the semester
+    @commands.command(hidden=True, aliases = ['sc'])
+    async def school(self, ctx):
+        lastDay = datetime(2022, 12, 9, 0, 0, 0, 0, ZoneInfo("America/Los_Angeles"))
+        date = datetime.now(ZoneInfo("America/Los_Angeles"))
+        timer = lastDay - date
+
+        await ctx.send(f'There are {timer.days} days and {round(timer.days / 7)} left until the end of the semester')
+
 def setup(bot):
     bot.add_cog(Commands(bot))
+
