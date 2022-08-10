@@ -117,6 +117,7 @@ class listeners(commands.Cog):
         #also updates time
         elif(VoiceStateBefore.channel != None and VoiceStateAfter.channel == None):
             if not VoiceStateBefore.afk:
+
                 update_time()
 
             print(f'{date}:INFO: {member.name} has left {VoiceStateBefore.channel}')

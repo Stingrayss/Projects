@@ -9,7 +9,6 @@ from discord.ext import commands
 #only need for users command
 #from collections import defaultdict
 
-
 #there might be a way to replace this, but the one I used caused big bugs
 def read_json():
     with open('data.json', 'r') as file: 
