@@ -1,13 +1,12 @@
-from ast import alias
 from typing import OrderedDict
 import discord
 from datetime import datetime
 import time
-from backports.zoneinfo import ZoneInfo
+import pytz
 import json
 from discord.ext import commands
 #only need for users command
-#from collections import defaultdict
+from collections import defaultdict
 
 #there might be a way to replace this, but the one I used caused big bugs
 def read_json():
@@ -26,19 +25,19 @@ class Commands(commands.Cog):
         self.bot = bot
 
     #This command gets changed to account for data updates
-    #@commands.command(hidden=True)
-    #@commands.has_permissions(administrator=True)
-    #async def users(self, ctx):
-        #server_list = defaultdict(dict)
-        #user = {}
-        #for guild in self.bot.guilds:
-            #for member in guild.members:
-                #user = {"server": guild.name, "name": member.display_name, "tracking": True, "inactive": 0, "messages": 0, "time": 0, "last_session": 0, "voice_join": 0, "voice_leave": 0}
-                #server_list[guild.id][member.id] = user
+    @commands.command(hidden=True)
+    @commands.has_permissions(administrator=True)
+    async def users(self, ctx):
+        server_list = defaultdict(dict)
+        user = {}
+        for guild in self.bot.guilds:
+            for member in guild.members:
+                user = {"server": guild.name, "name": member.display_name, "tracking": True, "inactive": 0, "messages": 0, "time": 0, "last_session": 0, "voice_join": 0, "voice_leave": 0}
+                server_list[guild.id][member.id] = user
 
-        #out = open("data.json", "w")
-        #json.dump(server_list, out, indent = 4)
-        #out.close()
+        out = open("data.json", "w")
+        json.dump(server_list, out, indent = 4)
+        out.close()
 
     #sends a leaderboard of the top 10 users for time spent in a server
     @commands.command(hidden=True, aliases = ['l'])
@@ -215,7 +214,8 @@ class Commands(commands.Cog):
     @commands.command(hidden=True)
     @commands.has_permissions(administrator=True)
     async def data(self, ctx):
-        date = datetime.now(ZoneInfo("America/Los_Angeles"))
+        tz = pytz.timezone("America/Los_Angeles")
+        date = datetime.now(tz)
         if(ctx.author.id == 105032801715290112):
             data = read_json()
             #not sure how this orders the data, but it does something
@@ -227,15 +227,5 @@ class Commands(commands.Cog):
             print(f'{date}:INFO: {ctx.author} retrieved user data')
         else: print(f'{date}:WARNING: {ctx.author} attempted to retrieve user data')
 
-    #Sends a message letting me know how much time is left before the last day of the semester
-    @commands.command(hidden=True, aliases = ['sc'])
-    async def school(self, ctx):
-        lastDay = datetime(2022, 12, 9, 0, 0, 0, 0, ZoneInfo("America/Los_Angeles"))
-        date = datetime.now(ZoneInfo("America/Los_Angeles"))
-        timer = lastDay - date
-
-        await ctx.send(f'There are {timer.days} days and {round(timer.days / 7)} left until the end of the semester')
-
-def setup(bot):
-    bot.add_cog(Commands(bot))
-
+async def setup(bot):
+    await bot.add_cog(Commands(bot))

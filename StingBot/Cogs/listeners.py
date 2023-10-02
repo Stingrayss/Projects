@@ -1,6 +1,6 @@
 import json
 from datetime import datetime
-from backports.zoneinfo import ZoneInfo
+import pytz
 import time
 from discord.ext import commands
 from collections import defaultdict
@@ -60,7 +60,8 @@ class listeners(commands.Cog):
         serverdata = data[str(member.guild.id)]  
         serverdata[str(member.id)]['tracking'] = False
         write_json(data)
-        date = datetime.now(ZoneInfo("America/Los_Angeles"))
+        tz = pytz.timezone("America/Los_Angeles")
+        date = datetime.now(tz)
         print(f'{date}:INFO: {member.name} has been removed from: {member.guild}')
     
     #checks member status in the server and changes the data file accordingly
@@ -79,7 +80,8 @@ class listeners(commands.Cog):
             serverdata[str(member.id)]['tracking'] = True
 
         write_json(data)
-        date = datetime.now(ZoneInfo("America/Los_Angeles"))
+        tz = pytz.timezone("America/Los_Angeles")
+        date = datetime.now(tz)
         print(f'{date}:INFO: {member.name} has joined: {member.guild}')
 
     #tracks a user's time spent in a voice call
@@ -87,7 +89,8 @@ class listeners(commands.Cog):
     async def on_voice_state_update(self, member, VoiceStateBefore, VoiceStateAfter):
         data = read_json()
         user = data[str(member.guild.id)][str(member.id)]
-        date = datetime.now(ZoneInfo("America/Los_Angeles"))
+        tz = pytz.timezone("America/Los_Angeles")
+        date = datetime.now(tz)
         currenttime = round(time.time(), 2)
 
         #function to update a user's time variable in the data
@@ -132,5 +135,5 @@ class listeners(commands.Cog):
         user['messages'] += 1
         write_json(data)
 
-def setup(bot):
-    bot.add_cog(listeners(bot))
+async def setup(bot):
+    await bot.add_cog(listeners(bot))

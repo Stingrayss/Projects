@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 from datetime import datetime
-from backports.zoneinfo import ZoneInfo
+import pytz
 import json
 import os
 import logging
@@ -29,21 +29,23 @@ intents = discord.Intents.all()
 intents.members = True
 
 # The bot
-bot = commands.Bot(prefix, intents = intents)
-bot.remove_command("help")
-bot.intents.members = True
+bot = commands.Bot(prefix, intents = intents, help_command=None)
 
 # Load cogs
-if __name__ == '__main__':
-	for filename in os.listdir("Cogs"):
-		if filename.endswith(".py"):
-			extensions += [filename[:-3]]
+@bot.event
+async def setup_hook():
+  for filename in os.listdir('./Cogs'):
+    if filename.endswith('.py'):
+        await bot.load_extension(f'Cogs.{filename[:-3]}')
+        print(f"Loaded Cog: {filename[:-3]}")
+    else:
+        print("Unable to load pycache folder.")
 
 @bot.event
 async def on_ready():
     print(f"Logged in as {bot.user}")
     for x in range(0, len(extensions)):
-        bot.load_extension(f'Cogs.{extensions[x]}')
+        await bot.load_extension(f'Cogs.{extensions[x]}')
     
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name =f"in the ocean"))
 
@@ -59,28 +61,32 @@ async def help(ctx):
 
 @bot.command(hidden=True)
 async def load(ctx):
-    date = datetime.now(ZoneInfo("America/Los_Angeles"))
+    tz = pytz.timezone("America/Los_Angeles")
+    date = datetime.now(tz)
     for x in range(0, len(extensions)):
         bot.load_extension(f'Cogs.{extensions[x]}')
     print(f'{date}:DEBUG: {extensions} has been loaded')
     
 @bot.command(hidden=True)
 async def unload(ctx):
-    date = datetime.now(ZoneInfo("America/Los_Angeles"))
+    tz = pytz.timezone("America/Los_Angeles")
+    date = datetime.now(tz)
     for x in range(0, len(extensions)):
         bot.unload_extension(f'Cogs.{extensions[x]}')
     print(f'{date}:DEBUG: {extensions} has been unloaded')
 
 @bot.command(hidden=True, aliases = ['r'])
 async def reload(ctx):
-    date = datetime.now(ZoneInfo("America/Los_Angeles"))
+    tz = pytz.timezone("America/Los_Angeles")
+    date = datetime.now(tz)
     for x in range(0, len(extensions)):
         bot.reload_extension(f'Cogs.{extensions[x]}')
     print(f'{date}:DEBUG: {extensions} has been reloaded')
 
 @bot.command(hidden=True)
 async def logout(ctx):
-    date = datetime.now(ZoneInfo("America/Los_Angeles"))
+    tz = pytz.timezone("America/Los_Angeles")
+    date = datetime.now(tz)
     print(f'{date}:INFO: {bot.user} is logging out')
     await bot.close()
 
